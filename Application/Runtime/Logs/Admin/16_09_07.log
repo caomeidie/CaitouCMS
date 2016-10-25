@@ -1,0 +1,817 @@
+[ 2016-09-07T14:32:42+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:32:42+08:00 ] 127.0.0.1 /admin.php/Index/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:32:53+08:00 ] 127.0.0.1 /admin.php/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:32:59+08:00 ] 127.0.0.1 /admin.php/Index/verify.html?0.28221802553560926
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-07T14:33:00+08:00 ] 127.0.0.1 /admin.php/Index/verify.html?0.2321692385591989
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:33:04+08:00 ] 127.0.0.1 /admin.php/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:33:12+08:00 ] 127.0.0.1 /admin.php/Index/verify.html?0.170880226833934
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:33:12+08:00 ] 127.0.0.1 /admin.php/Index/verify.html?0.8453937386738817
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:33:13+08:00 ] 127.0.0.1 /admin.php/Index/verify.html?0.45374855810517944
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:33:20+08:00 ] 127.0.0.1 /admin.php/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xman_admin` WHERE `admin_name` = 'admin' AND `password` = '7c4a8d09ca3762af61e59520943dc26494f8941b' LIMIT 1   [ RunTime:0.0340s ]
+
+[ 2016-09-07T14:33:20+08:00 ] 127.0.0.1 /admin.php/Foods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.146008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.146008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T14:34:27+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:45:37+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:47:17+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 230 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+
+[ 2016-09-07T15:48:26+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:48:31+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:49:06+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:49:34+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T15:49:55+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 230 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+
+[ 2016-09-07T15:50:06+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 230 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+
+[ 2016-09-07T15:50:20+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 230 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+
+[ 2016-09-07T15:50:21+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 230 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 269 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 280 行.
+
+[ 2016-09-07T15:50:36+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 149 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 149 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 149 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 149 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 149 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 153 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T15:56:41+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T15:56:51+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T15:57:04+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T15:57:13+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T15:57:21+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 231 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+NOTIC: [8] Undefined index: name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 148 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [8] Undefined index: error F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 270 行.
+NOTIC: [8] Undefined index: tmp_name F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 281 行.
+
+[ 2016-09-07T16:19:10+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2016-09-07T16:28:46+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `xman_foods_ext` [ RunTime:0.0030s ]
+ERR: 1062:Duplicata du champ '1' pour la clef 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `xman_foods_ext` (`foods_id`,`tools`,`ingredient`,`accessory`,`pretreatment`,`steps`) VALUES ('1','[\"\\u6240\\u9700\\u5de5\\u5177\"]','[\"\\u4e3b\\u6750sds\"]','[\"\\u8f85\\u6750sdsd\"]','预处理','[{\"time\":\"12\",\"step\":\"aaa\",\"step_cover\":\"20160907\\/57cfcfbe75764.jpg\"},{\"time\":\"13\",\"step\":\"sfsd\",\"step_cover\":\"20160907\\/57cfcfbe75b4c.jpg\"}]')
+ERR: 1062:Duplicata du champ '1' pour la clef 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `xman_foods_ext` (`foods_id`,`tools`,`ingredient`,`accessory`,`pretreatment`,`steps`) VALUES ('1','[\"\\u6240\\u9700\\u5de5\\u5177\"]','[\"\\u4e3b\\u6750sds\"]','[\"\\u8f85\\u6750sdsd\"]','预处理','[{\"time\":\"12\",\"step\":\"aaa\",\"step_cover\":\"20160907\\/57cfcfbe75764.jpg\"},{\"time\":\"13\",\"step\":\"sfsd\",\"step_cover\":\"20160907\\/57cfcfbe75b4c.jpg\"}]')
+
+[ 2016-09-07T16:29:27+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `xman_foods_ext` [ RunTime:0.0020s ]
+SQL: INSERT INTO `xman_foods_ext` (`foods_id`,`tools`,`ingredient`,`accessory`,`pretreatment`,`steps`) VALUES ('1','[\"\\u6240\\u9700\\u5de5\\u5177\"]','[\"\\u4e3b\\u6750sds\"]','[\"\\u8f85\\u6750sdsd\"]','预处理','[{\"time\":\"12\",\"step\":\"aaa\",\"step_cover\":\"20160907\\/57cfcfe7e2aef.jpg\"},{\"time\":\"13\",\"step\":\"sfsd\",\"step_cover\":\"20160907\\/57cfcfe7e32bf.jpg\"}]') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T16:39:15+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-09-07T16:39:17+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T16:45:46+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `xman_foods` [ RunTime:0.0020s ]
+SQL: INSERT INTO `xman_foods` (`title`,`foods_name`,`cuisines_id`,`status`,`content`,`store_condition`,`store_time`,`add_time`,`cover`) VALUES ('西红柿炒蛋','西红柿炒蛋','3','1','&lt;p&gt;这是西红柿炒蛋&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Upload/images/editor/20160907/1473237701121233.jpg&quot; title=&quot;1473237701121233.jpg&quot; alt=&quot;u=579466073,4029302782&amp;amp;fm=21&amp;amp;gp=0.jpg&quot;/&gt;&lt;/p&gt;','放冰箱冷藏','24','1473237946','20160907/57cfd3ba7ed2b.jpg') [ RunTime:0.0450s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\xmantoo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `xman_foods_ext` [ RunTime:0.0020s ]
+SQL: INSERT INTO `xman_foods_ext` (`foods_id`,`tools`,`ingredient`,`accessory`,`pretreatment`,`steps`) VALUES ('3','[\"\\u9505\\uff0c\\u94f2\\u5b50\\uff0c\\u6253\\u86cb\\u5668\\uff0c\\u7897\"]','[\"\\u897f\\u7ea2\\u67ff\\uff0c\\u9e21\\u86cb\"]','[\"\\u6cb9\\uff0c\\u7cd6\\uff0c\\u76d0\"]','1.西红柿切块
+2.鸡蛋打成蛋液','[{\"time\":\"3\",\"step\":\"\\u70ed\\u9505\\uff0c\\u5012\\u6cb9\\uff0c\\u70e7\\u81f35\\u6210\\u70ed\",\"step_cover\":\"20160907\\/57cfd3ba8e72f.jpg\"},{\"time\":\"5\",\"step\":\"\\u5012\\u5165\\u86cb\\u6db2\\uff0c\\u714e\\u86cb\\uff0c\\u5e76\\u628a\\u86cb\\u94f2\\u788e\",\"step_cover\":\"20160907\\/57cfd3ba8eb17.jpg\"},{\"time\":\"5\",\"step\":\"\\u5012\\u5165\\u897f\\u7ea2\\u67ff\",\"step_cover\":\"20160907\\/57cfd3ba8f2e7.jpg\"}]') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T16:48:08+08:00 ] 127.0.0.1 /admin.php/Foods/addFoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xman_cuisine` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xman_cuisine`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T16:48:16+08:00 ] 127.0.0.1 /admin.php/Foods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T17:58:54+08:00 ] 127.0.0.1 /admin.php/Foods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 1146:La table 'xmantoo.xman_user' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `xman_user`
+ERR: 1146:La table 'xmantoo.xman_user' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `xman_user`
+
+[ 2016-09-07T17:59:14+08:00 ] 127.0.0.1 /admin.php/Foods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xman_foods` [ RunTime:0.0030s ]
+SQL: Call p_get_foods_details(0) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-07T18:00:08+08:00 ] 127.0.0.1 /admin.php/Foods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `xman_foods` [ RunTime:0.0020s ]
+SQL: Call p_get_foods_details(1) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

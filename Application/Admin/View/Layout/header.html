@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title>拼图后台管理-后台管理</title>
+		<link rel="stylesheet" href="__PUBLIC__/admin/css/pintuer.css">
+		<link rel="stylesheet" href="__PUBLIC__/admin/css/admin.css">
+		<script src="__PUBLIC__/admin/js/jquery.js"></script>
+		<script src="__PUBLIC__/admin/js/pintuer.js"></script>
+		<script src="__PUBLIC__/admin/js/admin.js"></script>
+	</head>
+
+	<body>
+		<div class="lefter">
+			<div class="logo">
+				<a href="http://www.pintuer.com" target="_blank"><img src="__PUBLIC__/admin/images/logo.png" alt="后台管理系统" /></a>
+			</div>
+		</div>
+		<div class="righter nav-navicon" id="admin-nav">
+			<div class="mainer">
+				<div class="admin-navbar">
+					<span class="float-right">
+                    <a class="button button-little bg-main" href="" target="_blank">前台首页</a>
+                    <a class="button button-little bg-yellow" href="{:U('Index/logout')}">注销登录</a>
+                </span>
+					<ul class="nav nav-inline admin-nav">
+						<li <empty name="controller">class="active"</empty>>
+							<a href="index.html" class="icon-home"> 开始</a>
+							<ul>
+								<li><a href="{:U('Foods/listCuisine')}">菜系管理</a></li>
+								<li><a href="{:U('Foods/index')}">菜品管理</a></li>
+								<li><a href="{:U('Article/index')}">文章管理</a></li>
+								<li><a href="{:U('User/index')}">会员管理</a></li>
+							</ul>
+						</li>
+						<li <if condition="$controller eq 'Foods'">class="active"</if>>
+							<a href="{:U('Foods/index')}" class="icon-cog">菜品</a>
+							<ul>
+								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('Foods/index')}">菜品管理</a></li>
+								<li <if condition="$action eq 'addFoods'">class="active"</if>><a href="{:U('Foods/addFoods')}">添加菜品</a></li>
+								<li <if condition="$action eq 'addCuisine'">class="active"</if>><a href="{:U('Foods/addCuisine')}">添加菜系</a></li>
+								<li <if condition="$action eq 'listCuisine'">class="active"</if>><a href="{:U('Foods/listCuisine')}">菜系管理</a></li>
+							</ul>
+						</li>
+						<li <if condition="$controller eq 'Article'">class="active"</if>>
+							<a href="{:U('Article/index')}" class="icon-file-text">文章</a>
+							<ul>
+								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('Article/index')}">文章管理</a></li>
+								<li <if condition="$action eq 'addArticle'">class="active"</if>><a href="{:U('Article/addArticle')}">添加文章</a></li>
+								<li <if condition="$action eq 'addNotice'">class="active"</if>><a href="{:U('Article/addNotice')}">添加公告</a></li>
+								<li <if condition="$action eq 'listNotice'">class="active"</if>><a href="{:U('Article/listNotice')}">公告管理</a></li>
+							</ul>
+						</li>
+						<li <if condition="$controller eq 'User'">class="active"</if>>
+							<a href="{:U('User/index')}" class="icon-user">会员</a>
+							<ul>
+								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('User/index')}">添加文章</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="admin-bread">
+					<span>您好，admin，欢迎您的光临。</span>
+					<ul class="bread">
+						<li><a href="index.html" class="icon-home"> 开始</a></li>
+						<li>后台首页</li>
+					</ul>
+				</div>
+			</div>
+		</div>
