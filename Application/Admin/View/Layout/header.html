@@ -32,18 +32,8 @@
 							<a href="index.html" class="icon-home"> 开始</a>
 							<ul>
 								<li><a href="{:U('Foods/listCuisine')}">菜系管理</a></li>
-								<li><a href="{:U('Foods/index')}">菜品管理</a></li>
 								<li><a href="{:U('Article/index')}">文章管理</a></li>
-								<li><a href="{:U('User/index')}">会员管理</a></li>
-							</ul>
-						</li>
-						<li <if condition="$controller eq 'Foods'">class="active"</if>>
-							<a href="{:U('Foods/index')}" class="icon-cog">菜品</a>
-							<ul>
-								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('Foods/index')}">菜品管理</a></li>
-								<li <if condition="$action eq 'addFoods'">class="active"</if>><a href="{:U('Foods/addFoods')}">添加菜品</a></li>
-								<li <if condition="$action eq 'addCuisine'">class="active"</if>><a href="{:U('Foods/addCuisine')}">添加菜系</a></li>
-								<li <if condition="$action eq 'listCuisine'">class="active"</if>><a href="{:U('Foods/listCuisine')}">菜系管理</a></li>
+								<li><a href="{:U('User/index')}">管理员管理</a></li>
 							</ul>
 						</li>
 						<li <if condition="$controller eq 'Article'">class="active"</if>>
@@ -56,9 +46,14 @@
 							</ul>
 						</li>
 						<li <if condition="$controller eq 'User'">class="active"</if>>
-							<a href="{:U('User/index')}" class="icon-user">会员</a>
+							<a href="{:U('User/index')}" class="icon-user">管理员</a>
 							<ul>
-								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('User/index')}">添加文章</a></li>
+								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('User/index')}">管理员列表</a></li>
+								<li <if condition="$action eq 'addUser'">class="active"</if>><a href="{:U('User/addUser')}">添加管理员</a></li>
+								<li <if condition="$action eq 'listGroup'">class="active"</if>><a href="{:U('User/listGroup')}">用户组管理</a></li>
+								<li <if condition="$action eq 'addGroup'">class="active"</if>><a href="{:U('User/addGroup')}">添加用户组</a></li>
+								<li <if condition="$action eq 'listRule'">class="active"</if>><a href="{:U('User/listRule')}">权限管理</a></li>
+								<li <if condition="$action eq 'addRule'">class="active"</if>><a href="{:U('User/addRule')}">添加权限</a></li>
 							</ul>
 						</li>
 					</ul>

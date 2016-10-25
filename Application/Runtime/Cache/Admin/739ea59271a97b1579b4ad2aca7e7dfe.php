@@ -33,7 +33,7 @@
 							<ul>
 								<li><a href="<?php echo U('Foods/listCuisine');?>">菜系管理</a></li>
 								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
+								<li><a href="<?php echo U('User/index');?>">会员管理</a></li>
 							</ul>
 						</li>
 						<li <?php if($controller == 'Article'): ?>class="active"<?php endif; ?>>
@@ -46,14 +46,9 @@
 							</ul>
 						</li>
 						<li <?php if($controller == 'User'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U('User/index');?>" class="icon-user">管理员</a>
+							<a href="<?php echo U('User/index');?>" class="icon-user">会员</a>
 							<ul>
-								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/index');?>">管理员列表</a></li>
-								<li <?php if($action == 'addUser'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addUser');?>">添加管理员</a></li>
-								<li <?php if($action == 'listGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listGroup');?>">用户组管理</a></li>
-								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
-								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
-								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
+								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/index');?>">添加文章</a></li>
 							</ul>
 						</li>
 					</ul>

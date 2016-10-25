@@ -67,7 +67,62 @@
 				</div>
 			</div>
 		</div>
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
 <div class="admin">
+    <form method="post">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>文章列表</strong></div>
+            <div class="padding border-bottom">
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
+                <a href="<?php echo U('Article/addArticle');?>" class="button button-small border-green">添加文章</a>
+                <a href="" class="button button-small border-yellow">批量删除</a>
+                <a href="" class="button button-small border-blue">回收站</a>
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th width="45">选择</th>
+                    <th width="*">标题</th>
+                    <th width="120">所属板块</th>
+                    <th width="120">状态</th>
+                    <th width="200">添加时间</th>
+                    <th width="100">操作</th>
+                </tr>
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                        <td>
+                            <input type="checkbox" name="id" value="<?php echo ($vo["id"]); ?>" />
+                        </td>
+                        <td><?php echo ($vo["article_title"]); ?></td>
+                        <td><?php if($vo['article_type'] == 1): ?>文章<?php else: ?>公告<?php endif; ?></td>
+                        <td>
+                            <?php switch($vo["article_status"]): case "1": ?>正常<?php break;?>
+                                <?php default: ?>关闭<?php endswitch;?>
+                        </td>
+                        <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
+                        <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticle',array('id'=>$vo['id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticle',array('id'=>$vo['id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            </table>
+            <div class="panel-foot text-center">
+                <ul class="pagination">
+                    <li><a href="#">上一页</a></li>
+                </ul>
+                <ul class="pagination pagination-group">
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+                <ul class="pagination">
+                    <li><a href="#">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 

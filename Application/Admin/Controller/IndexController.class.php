@@ -6,7 +6,7 @@ class IndexController extends Controller {
 	public function __construct(){
 	    parent::__construct();
 		if(session('admin')){
-			$this->redirect('Foods/index');
+			$this->redirect('Article/index');
 		}
 	}
     public function index(){

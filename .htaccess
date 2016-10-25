@@ -1,7 +1,10 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine on
+    RewriteEngine off
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin/?(.*)$ admin.php/$1 [QSA,PT,L]
+    #RewriteRule ^admin.php/(.*)$ admin.php/$1 [QSA,PT,L]
     RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+    #RewriteRule ^admin/(.*)$ admin.php/$1
     #RewriteRule ^index.php/hscode/(.*).html$ /Index/details/id/$1
 </IfModule>
