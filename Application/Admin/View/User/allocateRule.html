@@ -1,0 +1,77 @@
+<include file="Layout/header" />
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
+<div class="admin">
+    <form method="post" class="form-x" action="{:U('User/allocateRule', array('id'=>$id))}">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>为[{$group_data.title}]分配权限</strong></div>
+            <table class="table table-hover">
+                <foreach name="rule_data" item="v">
+                    <empty name="v['_data']">
+                        <tr class="b-group">
+                            <th width="10%">
+                                <label>
+                                    {$v['name']}
+                                    <input type="checkbox" name="rule_ids[]" value="{$v['id']}" <if condition="in_array($v['id'],$group_data['rules'])">	checked="checked"</if> class="checkAll" >
+                                </label>
+                            </th>
+                            <td></td>
+                        </tr>
+                        <else />
+                        <tr class="b-group">
+                            <th width="10%">
+                                <label>
+                                    {$v['name']} <input type="checkbox" name="rule_ids[]" value="{$v['id']}" <if condition="in_array($v['id'],$group_data['rules'])">	checked="checked"</if> class="checkAll">
+                                </label>
+                            </th>
+                            <td class="b-child">
+                                <foreach name="v['_data']" item="n">
+                                    <table class="table table-striped table-bordered table-hover table-condensed">
+                                        <tr class="b-group">
+                                            <th width="12%">
+                                                <label>
+                                                    {$n['name']} <input type="checkbox" name="rule_ids[]" value="{$n['id']}" <if condition="in_array($n['id'],$group_data['rules'])">	checked="checked"</if> class="checkAll">
+                                                </label>
+                                            </th>
+                                            <td>
+                                                <notempty name="n['_data']">
+                                                    <volist name="n['_data']" id="c">
+                                                        <label>
+                                                            &emsp;{$c['name']} <input type="checkbox" name="rule_ids[]" value="{$c['id']}" <if condition="in_array($c['id'],$group_data['rules'])">	checked="checked"</if> >
+                                                        </label>
+                                                    </volist>
+                                                </notempty>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </foreach>
+                            </td>
+                        </tr>
+                    </empty>
+                </foreach>
+            </table>
+        </div>
+        <div class="form-button">
+            <button class="button bg-main" type="submit">提交</button>
+        </div>
+    </form>
+</div>
+<script>
+    $('.checkAll').click(function(){
+        if($(this).prop('checked')){
+            $(this).parents('.b-group').first().find(':checkbox').each(function(){
+                $(this).prop('checked', true);
+            });
+        }else{
+            $(this).parents('.b-group').first().find(':checkbox').each(function(){
+                $(this).prop('checked', false);
+            });
+        }
+
+    });
+</script>
+<include file="Layout/footer" />

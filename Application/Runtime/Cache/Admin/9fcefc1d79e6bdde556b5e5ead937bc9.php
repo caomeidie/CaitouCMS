@@ -91,7 +91,7 @@
                             <label for="title">权限</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="title" name="title" rows="5" cols="50"  placeholder="输入模块/控制器/方法即可 例如 Admin/Rule/index" data-validate="required:请填写权限" />
+                            <input type="text" class="input" id="title" name="title" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Rule/index" data-validate="required:请填写权限" />
                         </div>
                     </div>
                 </div>

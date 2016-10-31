@@ -67,60 +67,28 @@
 				</div>
 			</div>
 		</div>
-<style>
-    .list_pic{
-        width:50px;
-        height:30px;
-    }
-</style>
 <div class="admin">
     <form method="post">
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>列表</strong></div>
+            <div class="panel-head"><strong>用户组列表</strong></div>
             <div class="padding border-bottom">
-                <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
-                <a href="<?php echo U('User/addUser');?>" class="button button-small border-green">添加用户</a>
-                <a href="" class="button button-small border-yellow">批量删除</a>
-                <a href="" class="button button-small border-blue">回收站</a>
+                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
             </div>
             <table class="table table-hover">
                 <tr>
-                    <th width="45">选择</th>
-                    <th width="*">用户名</th>
-                    <th width="120">手机</th>
-                    <th width="120">状态</th>
-                    <th width="200">添加时间</th>
-                    <th width="100">操作</th>
+                    <th>用户组名</th>
+                    <th>操作</th>
                 </tr>
-                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+                        <td><?php echo ($vo['title']); ?></td>
                         <td>
-                            <input type="checkbox" name="admin_id" value="<?php echo ($vo["admin_id"]); ?>" />
+                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
+                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
+                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
+                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
                         </td>
-                        <td><?php echo ($vo["admin_name"]); ?></td>
-                        <td><?php echo ($vo["mobile"]); ?></td>
-                        <td>
-                            <?php switch($vo["status"]): case "1": ?>正常<?php break;?>
-                                <?php default: ?>关闭<?php endswitch;?>
-                        </td>
-                        <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
-                        <td><a class="button border-blue button-little" href="<?php echo U('User/editUser',array('id'=>$vo['admin_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('User/dropUser',array('id'=>$vo['admin_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                    </tr><?php endforeach; endif; ?>
             </table>
-            <div class="panel-foot text-center">
-                <ul class="pagination">
-                    <li><a href="#">上一页</a></li>
-                </ul>
-                <ul class="pagination pagination-group">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="#">下一页</a></li>
-                </ul>
-            </div>
         </div>
     </form>
 </div>

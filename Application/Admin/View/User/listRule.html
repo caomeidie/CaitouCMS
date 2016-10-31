@@ -1,10 +1,36 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<include file="Layout/header" />
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
+<div class="admin">
+    <form method="post">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>权限列表</strong></div>
+            <div class="padding border-bottom">
+                <a href="{:U('Rule/addRule')}" class="button button-small border-green">添加权限</a>
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th>权限名</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="list" item="vo">
+                    <tr>
+                        <td>{$vo['_name']}</td>
+                        <td>{$vo['title']}</td>
+                        <td>
+                            <a class="button border-blue button-little" href="{:U('User/addRule',array('pid'=>$vo['id']))}">添加子权限</a>
+                            <a class="button border-blue button-little" href="{:U('User/editRule',array('id'=>$vo['id']))}">修改</a>
+                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='{:U('User/dropRule',array('id'=>$vo['id']))}'">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+    </form>
+</div>
+<include file="Layout/footer" />

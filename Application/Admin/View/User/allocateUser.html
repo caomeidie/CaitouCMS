@@ -1,0 +1,31 @@
+<include file="Layout/header" />
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>用户组添加用户</strong></div>
+        <div class="padding border-bottom">
+            <form class="form-inline" action="{:U('User/allocateUser',array('id'=>$id))}" method="get">
+                <input class="form-control" type="text" name="username" value="{$Think.get.username}">
+                <input class="button button-small border-green" type="submit" value="搜索用户">
+            </form>
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>用户组名</th>
+                <th>操作</th>
+            </tr>
+            <foreach name="user_list" item="vo">
+                <tr>
+                    <td>{$vo['admin_name']}</td>
+                    <td>
+                        <empty name="vo.group_id">
+                            <a class="button border-blue button-little" href="{:U('User/doAllocateUser',array('id'=>$id, 'admin_id'=>$vo['id']))}">添加到用户组</a>
+                        <else />
+                            <a class="button border-red button-little" href="javascript:if(confirm('确定从用户组删除？'))location='{:U('User/dropAllocateUser',array('admin_id'=>$vo['id']))}'">从用户组删除</a>
+                        </empty>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+    </div>
+</div>
+<include file="Layout/footer" />

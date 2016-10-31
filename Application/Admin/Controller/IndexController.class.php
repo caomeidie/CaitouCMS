@@ -3,9 +3,10 @@ namespace Admin\Controller;
 use Think\Controller;
 use Think\Verify;
 class IndexController extends Controller {
+    private $allow_action = array('Index/logout');
 	public function __construct(){
 	    parent::__construct();
-		if(session('admin')){
+		if(session('admin') && !in_array(CONTROLLER_NAME.'/'.ACTION_NAME, $this->allow_action)){
 			$this->redirect('Article/index');
 		}
 	}
@@ -22,7 +23,7 @@ class IndexController extends Controller {
     	}
     	if($adminInfo = M('Admin')->where(array('admin_name'=>$admin_name, 'password'=>sha1($password)))->find()){
     		session('admin', $adminInfo);
-    		$this->redirect('Foods/index');
+    		$this->redirect('Article/index');
     	}else{
     		$this->error("登录失败！");
     	}
@@ -43,4 +44,9 @@ class IndexController extends Controller {
     	$Verify = new Verify();
     	return $Verify->check($code); 
     }
+
+	public function logout(){
+		session('admin', null);
+		$this->redirect('Index/index');
+	}
 }

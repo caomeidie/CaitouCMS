@@ -1,0 +1,41 @@
+<include file="Layout/header" />
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">修改权限</a></li>
+            </ul>
+        </div>
+        <form method="post" class="form-x" action="{:U('User/editRule', array('id'=>$id))}">
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="name">权限名</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="name" name="name" value="{$info.name}" size="50" placeholder="请填写权限名" data-validate="required:请填写权限名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="title">权限</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="title" name="title" value="{$info.title}" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Rule/index" data-validate="required:请填写权限" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+<include file="Layout/footer" />
