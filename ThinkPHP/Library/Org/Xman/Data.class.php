@@ -100,7 +100,12 @@ final class Data
     {
         if (!is_array($data) || empty($data))
             return array();
-        $arr = Data::channelList($data, 0, '', $fieldPri, $fieldPid);
+        $arr_index = Data::channelList($data, 0, '', $fieldPri, $fieldPid);
+        //var_dump($arr_index);
+        //对数组按顺序结构重新设置key
+        foreach($arr_index as $val){
+            $arr[] = $val;
+        }
         foreach ($arr as $k => $v) {
             $str = "";
             if ($v['_level'] > 2) {
@@ -110,7 +115,16 @@ final class Data
             }
             if ($v['_level'] != 1) {
                 $t = $title ? $v[$title] : "";
-                if (isset($arr[$k + 1]) && $arr[$k + 1]['_level'] >= $arr[$k]['_level']) {
+
+                //判断是不是同级最后一个
+                $end = true;
+                for($num = $k+1; $num < count($arr); $num++){
+                    if($arr[$num]['_level'] == $arr[$k]['_level'] && $arr[$num]['pid'] == $arr[$k]['pid']){
+                        $end = false;
+                    }
+                }
+                
+                if (isset($arr[$k + 1]) && $arr[$k + 1]['_level'] >= $arr[$k]['_level'] && $end == false) {
                     $arr[$k]['_name'] = $str . "&emsp;├─ " . $v['_html'] . $t;
                 } else {
                     $arr[$k]['_name'] = $str . "&emsp;└─ " . $v['_html'] . $t;

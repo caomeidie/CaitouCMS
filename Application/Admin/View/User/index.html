@@ -1,19 +1,12 @@
 <include file="Layout/header" />
-<style>
-    .list_pic{
-        width:50px;
-        height:30px;
-    }
-</style>
 <div class="admin">
-    <form method="post">
+    <form method="post" action="{:U('User/dropUserBatch')}" id="info_form">
         <div class="panel admin-panel">
             <div class="panel-head"><strong>列表</strong></div>
             <div class="padding border-bottom">
-                <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
                 <a href="{:U('User/addUser')}" class="button button-small border-green">添加用户</a>
-                <a href="" class="button button-small border-yellow">批量删除</a>
-                <a href="" class="button button-small border-blue">回收站</a>
+                <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -27,7 +20,7 @@
                 <volist name="list" id="vo">
                     <tr>
                         <td>
-                            <input type="checkbox" name="admin_id" value="{$vo.admin_id}" />
+                            <input type="checkbox" name="id[]" value="{$vo.admin_id}" />
                         </td>
                         <td>{$vo.admin_name}</td>
                         <td>{$vo.mobile}</td>
@@ -42,22 +35,32 @@
                     </tr>
                 </volist>
             </table>
-            <div class="panel-foot text-center">
-                <ul class="pagination">
-                    <li><a href="#">上一页</a></li>
-                </ul>
-                <ul class="pagination pagination-group">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="#">下一页</a></li>
-                </ul>
+            <div class="panel-foot text-center page">
+                {$page}
             </div>
         </div>
     </form>
 </div>
+<script>
+    $(function(){
+        $('#dropBatch').click(function(){
+            if($("#info_form").find(':checkbox:checked').length <= 0){
+                swal("", "请选择用户!", "error");
+                return false;
+            }else{
+                swal({
+                    title: "",
+                    text: "您确定要删除吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: true,
+                    confirmButtonText: "确定",
+                    confirmButtonColor: "#ec6c62"
+                }, function() {
+                    $("#info_form").submit();
+                });
+            }
+        });
+    })
+</script>
 <include file="Layout/footer" />

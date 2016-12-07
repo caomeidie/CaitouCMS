@@ -9,9 +9,12 @@
 		<title>拼图后台管理-后台管理</title>
 		<link rel="stylesheet" href="/Public/admin/css/pintuer.css">
 		<link rel="stylesheet" href="/Public/admin/css/admin.css">
+		<link rel="stylesheet" href="/Public/admin/css/henry.css">
 		<script src="/Public/admin/js/jquery.js"></script>
 		<script src="/Public/admin/js/pintuer.js"></script>
 		<script src="/Public/admin/js/admin.js"></script>
+		<link rel="stylesheet" href="/Public/admin/sweetalert/sweetalert.css">
+		<script src="/Public/admin/sweetalert/sweetalert.min.js"></script>
 	</head>
 
 	<body>

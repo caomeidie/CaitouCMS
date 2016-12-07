@@ -3,7 +3,10 @@ namespace Admin\Controller;
 use Admin\Controller\BackendController;
 class UserController extends BackendController {
     public function index(){
-        $list = M('Admin')->select();
+        $count      = M('Admin')->count();// 查询满足要求的总记录数
+        $limit = $this->page($count, 2);
+
+        $list = M('Admin')->order('add_time')->limit($limit)->select();
         $this->assign('list', $list);
         $this->display();
     }
@@ -15,13 +18,13 @@ class UserController extends BackendController {
                 $this->error('确认初始密码与初始密码不一致');
             }
             $data['add_time'] = time();
-            $data['password'] = md5($data['password']);
-            if($id = D('Admin')->add($data)){
+            $data['password'] = sha1($data['password']);
+            if(D('Admin')->create() && ($id = D('Admin')->add($data))){
                 if($data['group'] > 0){
                     M('Admin_group_access')->data(array('admin_id'=>$id, 'group_id'=>$data['group']))->add();
                 }
 
-                $this->success('添加用户成功');
+                $this->success('添加用户成功', U('index'));
             }else{
                 $this->error('添加用户失败');
             }
@@ -39,23 +42,21 @@ class UserController extends BackendController {
         }
         $this->assign('id', $id);
         if(IS_POST){
-            $data = I('post.');
-            if($data['password'] != $data['repeat_password']){
+            $data_form = I('post.');
+            if($data_form['password'] != $data_form['repeat_password']){
                 $this->error('确认初始密码与初始密码不一致');
             }
-            if(!$data['password']){
-                unset($data['password']);
-            }else{
-                $data['password'] = md5($data['password']);
+            if($data_form['password']){
+                $data['password'] =  sha1($data_form['password']);
             }
-            if(M('Admin')->where(array('admin_id'=>$id))->save($data)){
-                if($data['group'] > 0){
-                    M('Admin_group_access')->where(array('admin_id'=>$id))->save(array('group_id'=>$data['group']));
-                }
-
-                $this->success('编辑用户成功');
+            $data['admin_name'] = $data_form['admin_name'];
+            $data['mobile'] = $data_form['mobile'];
+            $data['status'] = $data_form['status'];
+            M('Admin_group_access')->where(array('admin_id'=>$id))->delete();
+            if(!D('Admin')->where(array('admin_id'=>$id))->save($data) && !(M('Admin_group_access')->data(array('admin_id'=>$id, 'group_id'=>$data_form['group']))->add())){
+                $this->success('编辑用户失败');
             }else{
-                $this->error('编辑用户失败');
+                $this->error('编辑用户成功', U('index'));
             }
         }else{
             $list = M('Admin_group')->select();
@@ -63,6 +64,37 @@ class UserController extends BackendController {
             $info = D('Admin')->alias('a')->field('a.*, aga.group_id')->join('__ADMIN_GROUP_ACCESS__ aga ON aga.admin_id = a.admin_id', 'LEFT')->where(array('a.admin_id'=>$id))->find();
             $this->assign('info', $info);
             $this->display();
+        }
+    }
+
+    public function dropUser(){
+        $id = I('get.id');
+        if(!$id){
+            $this->error('该用户不存在！');
+        }
+
+        if(M('Admin')->where(array('admin_id'=>$id))->delete()){
+            M('Admin_group_access')->where(array('admin_id'=>$id))->delete();
+            $this->success('删除用户成功', U('index'));
+        }else{
+            $this->error('删除用户失败', U('index'));
+        }
+    }
+
+    /**
+     *  批量删除用户
+     */
+    public function dropUserBatch(){
+        $id = I('post.id');
+        if(!$id){
+            $this->error('请选择用户！');
+        }
+
+        if(M('Admin')->where(array('admin_id'=>array('in', $id)))->delete()){
+            M('Admin_group_access')->where(array('admin_id'=>array('in', $id)))->delete();
+            $this->success('删除用户成功', U('index'));
+        }else{
+            $this->error('删除用户失败', U('index'));
         }
     }
 
@@ -88,9 +120,11 @@ class UserController extends BackendController {
     }
 
     public function listRule(){
-        $list = M('Admin_rule')->where('status=1')->order('pid ASC')->select();
+        $list = M('Admin_rule')->where('status=1')->order('id ASC')->index()->select();
+        //var_dump($list);
         $tree_list = getTree($list);
         $this->assign('list', $tree_list);
+        //var_dump($tree_list);
         $this->display();
     }
 

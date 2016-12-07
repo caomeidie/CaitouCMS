@@ -9,9 +9,12 @@
 		<title>拼图后台管理-后台管理</title>
 		<link rel="stylesheet" href="/Public/admin/css/pintuer.css">
 		<link rel="stylesheet" href="/Public/admin/css/admin.css">
+		<link rel="stylesheet" href="/Public/admin/css/henry.css">
 		<script src="/Public/admin/js/jquery.js"></script>
 		<script src="/Public/admin/js/pintuer.js"></script>
 		<script src="/Public/admin/js/admin.js"></script>
+		<link rel="stylesheet" href="/Public/admin/sweetalert/sweetalert.css">
+		<script src="/Public/admin/sweetalert/sweetalert.min.js"></script>
 	</head>
 
 	<body>
@@ -67,21 +70,14 @@
 				</div>
 			</div>
 		</div>
-<style>
-    .list_pic{
-        width:50px;
-        height:30px;
-    }
-</style>
 <div class="admin">
-    <form method="post">
+    <form method="post" action="<?php echo U('User/dropUserBatch');?>" id="info_form">
         <div class="panel admin-panel">
             <div class="panel-head"><strong>列表</strong></div>
             <div class="padding border-bottom">
-                <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
                 <a href="<?php echo U('User/addUser');?>" class="button button-small border-green">添加用户</a>
-                <a href="" class="button button-small border-yellow">批量删除</a>
-                <a href="" class="button button-small border-blue">回收站</a>
+                <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -94,7 +90,7 @@
                 </tr>
                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td>
-                            <input type="checkbox" name="admin_id" value="<?php echo ($vo["admin_id"]); ?>" />
+                            <input type="checkbox" name="id[]" value="<?php echo ($vo["admin_id"]); ?>" />
                         </td>
                         <td><?php echo ($vo["admin_name"]); ?></td>
                         <td><?php echo ($vo["mobile"]); ?></td>
@@ -106,24 +102,34 @@
                         <td><a class="button border-blue button-little" href="<?php echo U('User/editUser',array('id'=>$vo['admin_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('User/dropUser',array('id'=>$vo['admin_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </table>
-            <div class="panel-foot text-center">
-                <ul class="pagination">
-                    <li><a href="#">上一页</a></li>
-                </ul>
-                <ul class="pagination pagination-group">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="#">下一页</a></li>
-                </ul>
+            <div class="panel-foot text-center page">
+                <?php echo ($page); ?>
             </div>
         </div>
     </form>
 </div>
+<script>
+    $(function(){
+        $('#dropBatch').click(function(){
+            if($("#info_form").find(':checkbox:checked').length <= 0){
+                swal("", "请选择用户!", "error");
+                return false;
+            }else{
+                swal({
+                    title: "",
+                    text: "您确定要删除吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: true,
+                    confirmButtonText: "确定",
+                    confirmButtonColor: "#ec6c62"
+                }, function() {
+                    $("#info_form").submit();
+                });
+            }
+        });
+    })
+</script>
 </body>
 
 </html>
