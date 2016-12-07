@@ -21,16 +21,19 @@ USE `xmancms`;
 DROP TABLE IF EXISTS `xman_admin`;
 
 CREATE TABLE `xman_admin` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `admin_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `admin_name` varchar(50) NOT NULL,
   `password` varchar(40) NOT NULL,
+  `cover` varchar(10) DEFAULT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `add_time` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`admin_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin` */
 
-insert  into `xman_admin`(`id`,`admin_name`,`password`,`add_time`) values (1,'admin','7c4a8d09ca3762af61e59520943dc26494f8941b',0);
+insert  into `xman_admin`(`admin_id`,`admin_name`,`password`,`cover`,`mobile`,`status`,`add_time`) values (1,'admin','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,'13676587657',1,0),(4,'编辑','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,'13767960831',1,1477964502),(9,'bbb','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,'13767960831',1,1477987174),(6,'小米','7c4a8d09ca3762af61e59520943dc26494f8941b',NULL,'13579789873',1,1477964965),(8,'afds','e10adc3949ba59abbe56e057f20f883e',NULL,'13767960831',1,1477987162),(10,'ccc','202cb962ac59075b964b07152d234b70',NULL,'13767960831',1,1477987349),(14,'ccc','202cb962ac59075b964b07152d234b70',NULL,'13767960831',1,1477989038),(15,'ccc','202cb962ac59075b964b07152d234b70',NULL,'13767960831',1,1477989377),(16,'ccc','e10adc3949ba59abbe56e057f20f883e',NULL,'13767960831',1,1477989408),(17,'ccc','e10adc3949ba59abbe56e057f20f883e',NULL,'13767960831',1,1477989666),(18,'ggg','e10adc3949ba59abbe56e057f20f883e',NULL,'13767960831',1,1477989923);
 
 /*Table structure for table `xman_admin_group` */
 
@@ -42,9 +45,11 @@ CREATE TABLE `xman_admin_group` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `rules` text NOT NULL,
   PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_group` */
+
+insert  into `xman_admin_group`(`group_id`,`title`,`status`,`rules`) values (1,'超级管理员',1,'6,7,10,14'),(2,'编辑人员',1,'4,6,7,11,9,10,14');
 
 /*Table structure for table `xman_admin_group_access` */
 
@@ -58,6 +63,8 @@ CREATE TABLE `xman_admin_group_access` (
 
 /*Data for the table `xman_admin_group_access` */
 
+insert  into `xman_admin_group_access`(`admin_id`,`group_id`) values (1,1),(4,2),(6,1),(10,1),(18,1);
+
 /*Table structure for table `xman_admin_rule` */
 
 DROP TABLE IF EXISTS `xman_admin_rule`;
@@ -70,11 +77,11 @@ CREATE TABLE `xman_admin_rule` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_rule` */
 
-insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员列表','User/index',1,1);
+insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(11,1,'修改权限','User/editRule',1,1),(12,1,'删除权限','User/dropRule',1,1),(14,8,'公告管理','Article/listNotice',1,1);
 
 /*Table structure for table `xman_article` */
 
