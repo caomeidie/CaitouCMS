@@ -123,7 +123,7 @@ final class Data
                         $end = false;
                     }
                 }
-                
+
                 if (isset($arr[$k + 1]) && $arr[$k + 1]['_level'] >= $arr[$k]['_level'] && $end == false) {
                     $arr[$k]['_name'] = $str . "&emsp;├─ " . $v['_html'] . $t;
                 } else {

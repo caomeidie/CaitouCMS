@@ -120,17 +120,20 @@ class UserController extends BackendController {
     }
 
     public function listRule(){
-        $list = M('Admin_rule')->where('status=1')->order('id ASC')->index()->select();
-        //var_dump($list);
+        $list = M('Admin_rule')->where('status=1')->order('id ASC')->select();
         $tree_list = getTree($list);
         $this->assign('list', $tree_list);
-        //var_dump($tree_list);
         $this->display();
     }
 
     public function addRule(){
         $pid = I('get.pid') ? : 0;
         $this->assign('pid', $pid);
+        if($pid != 0){
+            $p_rule = M('Admin_rule')->where('id='.$pid)->find();
+            $this->assign('p_rule', $p_rule);
+        }
+
         if(IS_POST){
             $form_data = I('post.');
             $data['pid'] = $pid;
@@ -166,6 +169,10 @@ class UserController extends BackendController {
         }else{
             $info = M('Admin_rule')->where('id='.$id)->find();
             $this->assign('info', $info);
+            if($info['pid'] != 0){
+                $p_rule = M('Admin_rule')->where('id='.$info['pid'])->find();
+                $this->assign('p_rule', $p_rule);
+            }
             $this->display();
         }
     }
