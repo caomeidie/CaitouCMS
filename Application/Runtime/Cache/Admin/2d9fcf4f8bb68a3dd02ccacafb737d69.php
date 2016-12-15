@@ -77,7 +77,7 @@
         <div class="panel admin-panel">
             <div class="panel-head"><strong>用户组列表</strong></div>
             <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
+                <a href="<?php echo U('User/addGroup');?>" class="button button-small border-green">添加用户组</a>
             </div>
             <table class="table table-hover">
                 <tr>
