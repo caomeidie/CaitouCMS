@@ -127,18 +127,8 @@ class UserController extends BackendController {
     }
 
     public function addRule(){
-        $pid = I('get.pid') ? : 0;
-        $this->assign('pid', $pid);
-        if($pid != 0){
-            $p_rule = M('Admin_rule')->where('id='.$pid)->find();
-            $this->assign('p_rule', $p_rule);
-        }
-
         if(IS_POST){
-            $form_data = I('post.');
-            $data['pid'] = $pid;
-            $data['name'] = $form_data['name'];
-            $data['title'] = $form_data['title'];
+            $data = I('post.');
 
             if(M('Admin_rule')->add($data)){
                 $this->success('添加成功');
@@ -146,20 +136,28 @@ class UserController extends BackendController {
                 $this->error('添加失败');
             }
         }else{
+            $pid = I('get.pid') ? : 0;
+            $this->assign('pid', $pid);
+            if($pid != 0){
+                if(!M('Admin_rule')->where('id='.$pid)->find()){
+                    $this->error('父权限不存在');
+                }
+            }
+            $list = M('Admin_rule')->where('status=1')->order('id ASC')->select();
+            $tree_list = getTree($list);
+            $this->assign('list', $tree_list);
             $this->display();
         }
     }
 
     public function editRule(){
         $id = I('get.id');
-        if(!$id){
+        if(!$id || !$info = M('Admin_rule')->where('id='.$id)->find()){
             $this->error('该权限不存在！');
         }
         $this->assign('id', $id);
         if(IS_POST){
-            $form_data = I('post.');
-            $data['name'] = $form_data['name'];
-            $data['title'] = $form_data['title'];
+            $data = I('post.');
 
             if(M('Admin_rule')->where('id='.$id)->save($data)){
                 $this->success('编辑成功');
@@ -167,12 +165,10 @@ class UserController extends BackendController {
                 $this->error('编辑失败');
             }
         }else{
-            $info = M('Admin_rule')->where('id='.$id)->find();
             $this->assign('info', $info);
-            if($info['pid'] != 0){
-                $p_rule = M('Admin_rule')->where('id='.$info['pid'])->find();
-                $this->assign('p_rule', $p_rule);
-            }
+            $list = M('Admin_rule')->where('status=1')->order('id ASC')->select();
+            $tree_list = getTree($list);
+            $this->assign('list', $tree_list);
             $this->display();
         }
     }
@@ -183,6 +179,72 @@ class UserController extends BackendController {
             $this->error('该权限不存在！');
         }
         if(M('Admin_rule')->where('id='.$id)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
+    public function listMenu(){
+        $list = M('Admin_menu')->where('status=1')->order('id ASC')->select();
+        $tree_list = getTree($list);
+        $this->assign('list', $tree_list);
+        $this->display();
+    }
+
+    public function addMenu(){
+        if(IS_POST){
+            $data = I('post.');
+
+            if(M('Admin_menu')->add($data)){
+                $this->success('添加成功');
+            }else{
+                $this->error('添加失败');
+            }
+        }else{
+            $pid = I('get.pid') ? : 0;
+            $this->assign('pid', $pid);
+            if($pid != 0){
+                if(!M('Admin_menu')->where('id='.$pid)->find()){
+                    $this->error('父菜单不存在');
+                }
+            }
+            $list = M('Admin_menu')->where('status=1')->order('id ASC')->select();
+            $tree_list = getTree($list);
+            $this->assign('list', $tree_list);
+            $this->display();
+        }
+    }
+
+    public function editMenu(){
+        $id = I('get.id');
+        if(!$id || !$info = M('Admin_menu')->where('id='.$id)->find()){
+            $this->error('该菜单不存在！');
+        }
+        $this->assign('id', $id);
+        if(IS_POST){
+            $data = I('post.');
+
+            if(M('Admin_menu')->where('id='.$id)->save($data)){
+                $this->success('编辑成功');
+            }else{
+                $this->error('编辑失败');
+            }
+        }else{
+            $this->assign('info', $info);
+            $list = M('Admin_menu')->where('status=1')->order('id ASC')->select();
+            $tree_list = getTree($list);
+            $this->assign('list', $tree_list);
+            $this->display();
+        }
+    }
+
+    public function dropMenu(){
+        $id = I('get.id');
+        if(!$id){
+            $this->error('该菜单不存在！');
+        }
+        if(M('Admin_menu')->where('id='.$id)->delete()){
             $this->success('删除成功');
         }else{
             $this->error('删除失败');

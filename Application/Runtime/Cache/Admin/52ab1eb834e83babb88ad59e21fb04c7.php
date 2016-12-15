@@ -73,30 +73,55 @@
 			</div>
 		</div>
 <div class="admin">
-    <form method="post">
-        <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-            </table>
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">添加菜单</a></li>
+            </ul>
         </div>
-    </form>
+        <form method="post" class="form-x" action="<?php echo U('User/addMenu', array('pid'=>$pid));?>">
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="name">父菜单</label>
+                        </div>
+                        <div class="field">
+                            <select name="pid">
+                                <option value="0">一级菜单</option>
+                                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo["id"] == $pid): ?>selected<?php endif; ?>><?php echo ($vo['_name']); ?></option><?php endforeach; endif; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="name">菜单名</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="name" name="name" size="50" placeholder="请填写菜单名" data-validate="required:请填写菜单名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="title">权限</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="title" name="title" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Rule/index" data-validate="required:请填写权限" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
 </div>
+<script type="text/javascript">
+
+</script>
 </body>
 
 </html>

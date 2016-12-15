@@ -57,8 +57,6 @@
 								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
 								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
 								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
-								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
-								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -73,29 +71,6 @@
 			</div>
 		</div>
 <div class="admin">
-    <form method="post">
-        <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-            </table>
-        </div>
-    </form>
 </div>
 </body>
 

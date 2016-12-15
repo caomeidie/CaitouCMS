@@ -6,7 +6,7 @@
                 <li class="active"><a href="#tab-base">添加权限</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="{:U('User/addRule', array('pid'=>$pid))}">
+        <form method="post" class="form-x" action="{:U('User/addRule')}">
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
@@ -15,7 +15,12 @@
                             <label for="name">父权限</label>
                         </div>
                         <div class="field">
-                            <if condition="$p_rule">{$p_rule.name}<else />一级权限</if>
+                            <select name="pid">
+                            <option value="0">一级权限</option>
+                            <foreach name="list" item="vo">
+                                <option value="{$vo.id}" <if condition="$vo.id eq $pid">selected</if>>{$vo['_name']}</option>
+                            </foreach>
+                        </select>
                         </div>
                     </div>
                     <div class="form-group">

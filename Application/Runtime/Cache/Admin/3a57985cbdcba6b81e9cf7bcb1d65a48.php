@@ -72,25 +72,32 @@
 				</div>
 			</div>
 		</div>
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
 <div class="admin">
     <form method="post">
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
+            <div class="panel-head"><strong>菜单列表</strong></div>
             <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
+                <a href="<?php echo U('User/addMenu');?>" class="button button-small border-green">添加菜单</a>
             </div>
             <table class="table table-hover">
                 <tr>
-                    <th>用户组名</th>
+                    <th>菜单名</th>
+                    <th>权限</th>
                     <th>操作</th>
                 </tr>
                 <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+                        <td><?php echo ($vo['_name']); ?></td>
                         <td><?php echo ($vo['title']); ?></td>
                         <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
+                            <?php if($vo["_level"] == 1): ?><a class="button border-blue button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
+                            <?php if($vo["title"] != 'User/listMenu' AND $vo["title"] != 'User/addMenu' AND $vo["title"] != 'User/addRule' AND $vo["title"] != 'User/listRule'): ?><a class="button border-blue button-little" href="<?php echo U('User/editMenu',array('id'=>$vo['id']));?>">修改</a>
+                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropMenu',array('id'=>$vo['id']));?>'">删除</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; ?>
             </table>

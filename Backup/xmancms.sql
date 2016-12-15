@@ -65,6 +65,24 @@ CREATE TABLE `xman_admin_group_access` (
 
 insert  into `xman_admin_group_access`(`admin_id`,`group_id`) values (1,1),(4,2),(6,1),(10,1),(18,1);
 
+/*Table structure for table `xman_admin_menu` */
+
+DROP TABLE IF EXISTS `xman_admin_menu`;
+
+CREATE TABLE `xman_admin_menu` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(80) NOT NULL DEFAULT '',
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+/*Data for the table `xman_admin_menu` */
+
+insert  into `xman_admin_menu`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(14,8,'公告管理','Article/listNotice',1,1),(16,8,'添加公告','Article/addNotice',1,1),(17,1,'菜单管理','User/listMenu',1,1),(18,1,'添加菜单','User/addMenu',1,1),(20,8,'文章栏目管理','Article/listArticleColumn',1,1),(21,8,'添加文章栏目','Article/addArticleColumn',1,1);
+
 /*Table structure for table `xman_admin_rule` */
 
 DROP TABLE IF EXISTS `xman_admin_rule`;
@@ -77,11 +95,11 @@ CREATE TABLE `xman_admin_rule` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_rule` */
 
-insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(11,1,'修改权限','User/editRule',1,1),(12,1,'删除权限','User/dropRule',1,1),(14,8,'公告管理','Article/listNotice',1,1);
+insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(14,8,'公告管理','Article/listNotice',1,1),(16,8,'添加公告','Article/addNotice',1,1),(17,2,'修改管理员','Rule/editUser',1,1),(18,2,'删除管理员','User/dropUser',1,1),(19,4,'删除用户组','User/dropGroup',1,1),(20,4,'修改用户组','User/editGroup',1,1),(21,4,'分配权限','User/allocateRule',1,1),(22,4,'添加用户','User/allocateUser',1,1),(23,6,'修改权限','User/editRule',1,1),(24,6,'删除权限','User/dropRule',1,1),(25,1,'菜单管理','User/listMenu',1,1),(26,1,'添加菜单','addMenu',1,1),(27,25,'修改菜单','User/editMenu',1,1),(28,25,'删除菜单','Rule/dropMenu',1,1),(29,9,'修改文章','Article/editArticle',1,1),(30,9,'删除文章','Article/dropArticle',1,1),(31,14,'修改公告','Article/editNotice',1,1),(32,14,'删除公告','Article/dropNotice',1,1),(33,8,'文章栏目管理','Article/listArticleColumn',1,1),(34,8,'添加文章栏目','Article/addArticleColumn',1,1),(35,33,'修改文章栏目','Article/editArticleColumn',1,1),(36,33,'删除文章栏目','Article/dropArticleColumn',1,1);
 
 /*Table structure for table `xman_article` */
 

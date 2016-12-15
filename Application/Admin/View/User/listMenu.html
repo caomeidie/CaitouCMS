@@ -1,0 +1,38 @@
+<include file="Layout/header" />
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
+<div class="admin">
+    <form method="post">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>菜单列表</strong></div>
+            <div class="padding border-bottom">
+                <a href="{:U('User/addMenu')}" class="button button-small border-green">添加菜单</a>
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th>菜单名</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="list" item="vo">
+                    <tr>
+                        <td>{$vo['_name']}</td>
+                        <td>{$vo['title']}</td>
+                        <td>
+                            <if condition="$vo._level eq 1"><a class="button border-blue button-little" href="{:U('User/addMenu',array('pid'=>$vo['id']))}">添加子菜单</a></if>
+                            <if condition="$vo.title neq 'User/listMenu' AND $vo.title neq 'User/addMenu' AND $vo.title neq 'User/addRule' AND $vo.title neq 'User/listRule'">
+                            <a class="button border-blue button-little" href="{:U('User/editMenu',array('id'=>$vo['id']))}">修改</a>
+                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='{:U('User/dropMenu',array('id'=>$vo['id']))}'">删除</a>
+                            </if>
+                        </td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+    </form>
+</div>
+<include file="Layout/footer" />

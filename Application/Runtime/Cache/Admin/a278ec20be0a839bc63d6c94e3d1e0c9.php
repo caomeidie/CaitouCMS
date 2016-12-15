@@ -72,31 +72,71 @@
 				</div>
 			</div>
 		</div>
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
 <div class="admin">
-    <form method="post">
+    <form method="post" class="form-x" action="<?php echo U('User/allocateRule', array('id'=>$id));?>">
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
+            <div class="panel-head"><strong>为[<?php echo ($group_data["title"]); ?>]分配权限</strong></div>
             <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
+                <?php if(is_array($rule_data)): foreach($rule_data as $key=>$v): if(empty($v['_data'])): ?><tr class="b-group">
+                            <th width="10%">
+                                <label>
+                                    <?php echo ($v['name']); ?>
+                                    <input type="checkbox" name="rule_ids[]" value="<?php echo ($v['id']); ?>" <?php if(in_array($v['id'],$group_data['rules'])): ?>checked="checked"<?php endif; ?> class="checkAll" >
+                                </label>
+                            </th>
+                            <td></td>
+                        </tr>
+                        <?php else: ?>
+                        <tr class="b-group">
+                            <th width="10%">
+                                <label>
+                                    <?php echo ($v['name']); ?> <input type="checkbox" name="rule_ids[]" value="<?php echo ($v['id']); ?>" <?php if(in_array($v['id'],$group_data['rules'])): ?>checked="checked"<?php endif; ?> class="checkAll">
+                                </label>
+                            </th>
+                            <td class="b-child">
+                                <?php if(is_array($v['_data'])): foreach($v['_data'] as $key=>$n): ?><table class="table table-striped table-bordered table-hover table-condensed">
+                                        <tr class="b-group">
+                                            <th width="12%">
+                                                <label>
+                                                    <?php echo ($n['name']); ?> <input type="checkbox" name="rule_ids[]" value="<?php echo ($n['id']); ?>" <?php if(in_array($n['id'],$group_data['rules'])): ?>checked="checked"<?php endif; ?> class="checkAll">
+                                                </label>
+                                            </th>
+                                            <td>
+                                                <?php if(!empty($n['_data'])): if(is_array($n['_data'])): $i = 0; $__LIST__ = $n['_data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?><label>
+                                                            &emsp;<?php echo ($c['name']); ?> <input type="checkbox" name="rule_ids[]" value="<?php echo ($c['id']); ?>" <?php if(in_array($c['id'],$group_data['rules'])): ?>checked="checked"<?php endif; ?> >
+                                                        </label><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+                                            </td>
+                                        </tr>
+                                    </table><?php endforeach; endif; ?>
+                            </td>
+                        </tr><?php endif; endforeach; endif; ?>
             </table>
+        </div>
+        <div class="form-button">
+            <button class="button bg-main" type="submit">提交</button>
         </div>
     </form>
 </div>
+<script>
+    $('.checkAll').click(function(){
+        if($(this).prop('checked')){
+            $(this).parents('.b-group').first().find(':checkbox').each(function(){
+                $(this).prop('checked', true);
+            });
+        }else{
+            $(this).parents('.b-group').first().find(':checkbox').each(function(){
+                $(this).prop('checked', false);
+            });
+        }
+
+    });
+</script>
 </body>
 
 </html>

@@ -57,6 +57,8 @@
 								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
 								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
 								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
+								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
+								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -81,7 +83,7 @@
         <div class="panel admin-panel">
             <div class="panel-head"><strong>权限列表</strong></div>
             <div class="padding border-bottom">
-                <a href="<?php echo U('Rule/addRule');?>" class="button button-small border-green">添加权限</a>
+                <a href="<?php echo U('User/addRule');?>" class="button button-small border-green">添加权限</a>
             </div>
             <table class="table table-hover">
                 <tr>

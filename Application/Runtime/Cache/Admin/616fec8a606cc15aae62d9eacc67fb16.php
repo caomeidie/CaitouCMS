@@ -57,8 +57,6 @@
 								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
 								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
 								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
-								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
-								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -72,31 +70,69 @@
 				</div>
 			</div>
 		</div>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="admin">
-    <form method="post">
-        <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-            </table>
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">添加文章</a></li>
+            </ul>
         </div>
-    </form>
+        <form method="post" class="form-x" action="<?php echo U('Article/addArticle');?>" enctype="multipart/form-data" >
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="subtitle">标题</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="title" name="title" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="foods_name">概述</label>
+                        </div>
+                        <div class="field">
+                            <textarea class="input" id="profile" name="profile" rows="5" cols="50" placeholder="概述"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>所属板块</label>
+                        </div>
+                        <div class="field">
+                            <div class="button-group button-group-small radio">
+                                <select name="type">
+                                    <option value="1" selected>文章</option>
+                                    <option value="2">公告</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="content">内容</label>
+                        </div>
+                        <div class="field">
+                            <script id="editor" name="content" type="text/plain" style="width:100%;height:300px;"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
 </div>
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+</script>
 </body>
 
 </html>

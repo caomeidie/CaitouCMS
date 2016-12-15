@@ -57,6 +57,8 @@
 								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
 								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
 								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
+								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
+								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -77,7 +79,7 @@
                 <li class="active"><a href="#tab-base">添加权限</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="<?php echo U('User/addRule', array('pid'=>$pid));?>">
+        <form method="post" class="form-x" action="<?php echo U('User/addRule');?>">
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
@@ -86,7 +88,10 @@
                             <label for="name">父权限</label>
                         </div>
                         <div class="field">
-                            <?php if($p_rule): echo ($p_rule["name"]); else: ?>一级权限<?php endif; ?>
+                            <select name="pid">
+                            <option value="0">一级权限</option>
+                            <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo["id"] == $pid): ?>selected<?php endif; ?>><?php echo ($vo['_name']); ?></option><?php endforeach; endif; ?>
+                        </select>
                         </div>
                     </div>
                     <div class="form-group">

@@ -73,29 +73,29 @@
 			</div>
 		</div>
 <div class="admin">
-    <form method="post">
-        <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('Group/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-            </table>
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>用户组添加用户</strong></div>
+        <div class="padding border-bottom">
+            <form class="form-inline" action="<?php echo U('User/allocateUser',array('id'=>$id));?>" method="get">
+                <input class="form-control" type="text" name="username" value="<?php echo ($_GET['username']); ?>">
+                <input class="button button-small border-green" type="submit" value="搜索用户">
+            </form>
         </div>
-    </form>
+        <table class="table table-hover">
+            <tr>
+                <th>用户组名</th>
+                <th>操作</th>
+            </tr>
+            <?php if(is_array($user_list)): foreach($user_list as $key=>$vo): ?><tr>
+                    <td><?php echo ($vo['admin_name']); ?></td>
+                    <td>
+                        <?php if(empty($vo["group_id"])): ?><a class="button border-blue button-little" href="<?php echo U('User/doAllocateUser',array('id'=>$id, 'admin_id'=>$vo['id']));?>">添加到用户组</a>
+                        <?php else: ?>
+                            <a class="button border-red button-little" href="javascript:if(confirm('确定从用户组删除？'))location='<?php echo U('User/dropAllocateUser',array('admin_id'=>$vo['id']));?>'">从用户组删除</a><?php endif; ?>
+                    </td>
+                </tr><?php endforeach; endif; ?>
+        </table>
+    </div>
 </div>
 </body>
 
