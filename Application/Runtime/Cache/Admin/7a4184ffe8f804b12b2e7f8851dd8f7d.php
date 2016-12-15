@@ -34,20 +34,20 @@
 						<li <?php if(empty($controller)): ?>class="active"<?php endif; ?>>
 							<a href="index.html" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="<?php echo U('Foods/listCuisine');?>">菜系管理</a></li>
 								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
 								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
 							</ul>
 						</li>
-						<li <?php if($controller == 'Article'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U('Article/index');?>" class="icon-file-text">文章</a>
+						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['title'] == $menu_active): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U($vo['title']);?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
 							<ul>
 								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/index');?>">文章管理</a></li>
 								<li <?php if($action == 'addArticle'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addArticle');?>">添加文章</a></li>
 								<li <?php if($action == 'addNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addNotice');?>">添加公告</a></li>
 								<li <?php if($action == 'listNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/listNotice');?>">公告管理</a></li>
 							</ul>
-						</li>
+						</li><?php endforeach; endif; ?>
+
 						<li <?php if($controller == 'User'): ?>class="active"<?php endif; ?>>
 							<a href="<?php echo U('User/index');?>" class="icon-user">管理员</a>
 							<ul>

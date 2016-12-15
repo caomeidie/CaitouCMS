@@ -34,33 +34,23 @@
 						<li <empty name="controller">class="active"</empty>>
 							<a href="index.html" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="{:U('Foods/listCuisine')}">菜系管理</a></li>
 								<li><a href="{:U('Article/index')}">文章管理</a></li>
 								<li><a href="{:U('User/index')}">管理员管理</a></li>
 							</ul>
 						</li>
-						<li <if condition="$controller eq 'Article'">class="active"</if>>
-							<a href="{:U('Article/index')}" class="icon-file-text">文章</a>
+						<foreach name="menu_list" item="vo">
+						<li <if condition="$vo['title'] eq $menu_active">class="active"</if>>
+							<a href="{:U($vo['title'])}" class="icon-file-text">{$vo.name}</a>
 							<ul>
+								<foreach name="vo" item="val">
 								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('Article/index')}">文章管理</a></li>
 								<li <if condition="$action eq 'addArticle'">class="active"</if>><a href="{:U('Article/addArticle')}">添加文章</a></li>
 								<li <if condition="$action eq 'addNotice'">class="active"</if>><a href="{:U('Article/addNotice')}">添加公告</a></li>
 								<li <if condition="$action eq 'listNotice'">class="active"</if>><a href="{:U('Article/listNotice')}">公告管理</a></li>
+								</foreach>
 							</ul>
 						</li>
-						<li <if condition="$controller eq 'User'">class="active"</if>>
-							<a href="{:U('User/index')}" class="icon-user">管理员</a>
-							<ul>
-								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('User/index')}">管理员列表</a></li>
-								<li <if condition="$action eq 'addUser'">class="active"</if>><a href="{:U('User/addUser')}">添加管理员</a></li>
-								<li <if condition="$action eq 'listGroup'">class="active"</if>><a href="{:U('User/listGroup')}">用户组管理</a></li>
-								<li <if condition="$action eq 'addGroup'">class="active"</if>><a href="{:U('User/addGroup')}">添加用户组</a></li>
-								<li <if condition="$action eq 'listRule'">class="active"</if>><a href="{:U('User/listRule')}">权限管理</a></li>
-								<li <if condition="$action eq 'addRule'">class="active"</if>><a href="{:U('User/addRule')}">添加权限</a></li>
-								<li <if condition="$action eq 'listMenu'">class="active"</if>><a href="{:U('User/listMenu')}">菜单管理</a></li>
-								<li <if condition="$action eq 'addMenu'">class="active"</if>><a href="{:U('User/addMenu')}">添加菜单</a></li>
-							</ul>
-						</li>
+						</foreach>
 					</ul>
 				</div>
 				<div class="admin-bread">

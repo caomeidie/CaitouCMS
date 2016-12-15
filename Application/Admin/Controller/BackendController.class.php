@@ -9,8 +9,10 @@ class BackendController extends Controller {
 		if(!session('admin')){
 			$this->redirect('Index/index');
 		}
-		$this->assign('controller',CONTROLLER_NAME);
-		$this->assign('action',ACTION_NAME);
+        require_once RUNTIME_PATH.'Cache/menu.php';
+        $this->assign('menu_list',MENU_LIST);
+		$this->assign('menu_active',CONTROLLER_NAME.'/'.ACTION_NAME);
+        $this->assign('controller',CONTROLLER_NAME);
 	}
 
 	public function page($count, $per = 10){
