@@ -24,8 +24,14 @@ class BackendController extends Controller {
 			$this->assign('menu_list',$tree_list);
 		}
 
-		//$this->assign('menu_active',CONTROLLER_NAME.'/'.ACTION_NAME);
-        $this->assign('controller',CONTROLLER_NAME);
+		$menu = I('get.menu') ? I('get.menu') : 0;
+		if(!$menu){
+			$start_menu_list = M('Admin_menu')->where('status=1 AND recom=1')->order('id ASC')->index('id')->select();
+			$this->assign('start_menu_list',$start_menu_list);
+		}
+		$this->assign('menu',$menu);
+		$this->assign('menu_active',CONTROLLER_NAME.'/'.ACTION_NAME);
+
 	}
 
 	public function page($count, $per = 10){

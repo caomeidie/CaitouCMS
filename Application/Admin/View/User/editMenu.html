@@ -18,7 +18,7 @@
                             <select name="pid">
                                 <option value="0">一级菜单</option>
                                 <foreach name="list" item="vo">
-                                    <option value="{$vo.id}" <if condition="$vo.id eq $info['pid']">selected</if>>{$vo['_name']}</option>
+                                    <option value="{$vo.id}" <if condition="$vo['id'] eq $info['pid']">selected</if>>{$vo['_name']}</option>
                                 </foreach>
                             </select>
                         </div>
@@ -37,6 +37,19 @@
                         </div>
                         <div class="field">
                             <input type="text" class="input" id="title" name="title" value="{$info.title}" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Menu/index" data-validate="required:请填写菜单" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>推荐到开始菜单</label>
+                        </div>
+                        <div class="field">
+                            <div class="button-group button-group-small radio">
+                                <label <if condition="$info.recom eq 1">class="button active"<else />class="button"</if>>
+                                    <input name="recom" value="1" <if condition="$info['recom'] eq 1">checked="checked"</if> type="radio"><span class="icon icon-check"></span> 是</label>
+                                <label <if condition="$info.recom eq 0">class="button active"<else />class="button"</if>>
+                                    <input name="recom" value="0" <if condition="$info['recom'] eq 0">checked="checked"</if> type="radio"><span class="icon icon-times"></span> 否</label>
+                            </div>
                         </div>
                     </div>
                 </div>

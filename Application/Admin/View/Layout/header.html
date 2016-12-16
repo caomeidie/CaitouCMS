@@ -31,22 +31,23 @@
                     <a class="button button-little bg-yellow" href="{:U('Index/logout')}">注销登录</a>
                 </span>
 					<ul class="nav nav-inline admin-nav">
-						<li <empty name="controller">class="active"</empty>>
-							<a href="index.html" class="icon-home"> 开始</a>
+						<li <if condition="0 eq $menu">class="active"</if>>
+							<a href="{:U('Home/index')}" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="{:U('Article/index')}">文章管理</a></li>
-								<li><a href="{:U('User/index')}">管理员管理</a></li>
+								<li <if condition="$menu_active eq 'Home/index'">class="active"</if>><a href="{:U('Home/index', array('menu'=>0))}">平台首页</a></li>
+								<notempty name="start_menu_list">
+								<foreach name="start_menu_list" item="vo">
+									<li><a href="{:U($vo['title'], array('menu'=>$vo['pid']))}">{$vo.name}</a></li>
+								</foreach>
+								</notempty>
 							</ul>
 						</li>
 						<foreach name="menu_list" item="vo">
-						<li <if condition="$vo['title'] eq $controller">class="active"</if>>
-							<a href="{:U($vo['title'])}" class="icon-file-text">{$vo.name}</a>
+						<li <if condition="$vo['id'] eq $menu">class="active"</if>>
+							<a href="{:U($vo['title'], array('menu'=>$vo['id']))}" class="icon-file-text">{$vo.name}</a>
 							<ul>
-								<foreach name="vo" item="val">
-								<li <if condition="$action eq 'index'">class="active"</if>><a href="{:U('Article/index')}">文章管理</a></li>
-								<li <if condition="$action eq 'addArticle'">class="active"</if>><a href="{:U('Article/addArticle')}">添加文章</a></li>
-								<li <if condition="$action eq 'addNotice'">class="active"</if>><a href="{:U('Article/addNotice')}">添加公告</a></li>
-								<li <if condition="$action eq 'listNotice'">class="active"</if>><a href="{:U('Article/listNotice')}">公告管理</a></li>
+								<foreach name="vo._data" item="val">
+								<li <if condition="$menu_active eq $val['title']">class="active"</if>><a href="{:U($val['title'], array('menu'=>$val['pid']))}">{$val.name}</a></li>
 								</foreach>
 							</ul>
 						</li>

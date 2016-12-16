@@ -17,12 +17,14 @@
                 <tr>
                     <th>菜单名</th>
                     <th>权限</th>
+                    <th>是否推荐</th>
                     <th>操作</th>
                 </tr>
                 <foreach name="list" item="vo">
                     <tr>
                         <td>{$vo['_name']}</td>
                         <td>{$vo['title']}</td>
+                        <td><if condition="$vo['recom'] eq 1">是<else />否</if></td>
                         <td>
                             <if condition="$vo._level eq 1"><a class="button border-blue button-little" href="{:U('User/addMenu',array('pid'=>$vo['id']))}">添加子菜单</a></if>
                             <if condition="$vo.title neq 'User/listMenu' AND $vo.title neq 'User/addMenu' AND $vo.title neq 'User/addRule' AND $vo.title neq 'User/listRule'">
