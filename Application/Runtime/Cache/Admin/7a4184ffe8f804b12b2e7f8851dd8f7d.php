@@ -38,29 +38,15 @@
 								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
 							</ul>
 						</li>
-						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['title'] == $menu_active): ?>class="active"<?php endif; ?>>
+						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['title'] == $controller): ?>class="active"<?php endif; ?>>
 							<a href="<?php echo U($vo['title']);?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
 							<ul>
-								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/index');?>">文章管理</a></li>
+								<?php if(is_array($vo)): foreach($vo as $key=>$val): ?><li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/index');?>">文章管理</a></li>
 								<li <?php if($action == 'addArticle'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addArticle');?>">添加文章</a></li>
 								<li <?php if($action == 'addNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addNotice');?>">添加公告</a></li>
-								<li <?php if($action == 'listNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/listNotice');?>">公告管理</a></li>
+								<li <?php if($action == 'listNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/listNotice');?>">公告管理</a></li><?php endforeach; endif; ?>
 							</ul>
 						</li><?php endforeach; endif; ?>
-
-						<li <?php if($controller == 'User'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U('User/index');?>" class="icon-user">管理员</a>
-							<ul>
-								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/index');?>">管理员列表</a></li>
-								<li <?php if($action == 'addUser'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addUser');?>">添加管理员</a></li>
-								<li <?php if($action == 'listGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listGroup');?>">用户组管理</a></li>
-								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
-								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
-								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
-								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
-								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
-							</ul>
-						</li>
 					</ul>
 				</div>
 				<div class="admin-bread">

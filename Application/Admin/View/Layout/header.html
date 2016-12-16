@@ -39,7 +39,7 @@
 							</ul>
 						</li>
 						<foreach name="menu_list" item="vo">
-						<li <if condition="$vo['title'] eq $menu_active">class="active"</if>>
+						<li <if condition="$vo['title'] eq $controller">class="active"</if>>
 							<a href="{:U($vo['title'])}" class="icon-file-text">{$vo.name}</a>
 							<ul>
 								<foreach name="vo" item="val">

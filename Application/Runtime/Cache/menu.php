@@ -4,8 +4,8 @@ define("MENU_LIST", array (
   array (
     'id' => '1',
     'pid' => '0',
-    'name' => '管理员',
-    'title' => 'User/index',
+    'name' => '管理员管理',
+    'title' => 'User',
     'status' => '1',
     'type' => '1',
     '_level' => 1,
@@ -16,7 +16,7 @@ define("MENU_LIST", array (
       array (
         'id' => '2',
         'pid' => '1',
-        'name' => '管理员管理',
+        'name' => '管理员列表',
         'title' => 'User/index',
         'status' => '1',
         'type' => '1',
@@ -130,8 +130,8 @@ define("MENU_LIST", array (
   array (
     'id' => '8',
     'pid' => '0',
-    'name' => '文章',
-    'title' => 'Article/index',
+    'name' => '文章管理',
+    'title' => 'Article',
     'status' => '1',
     'type' => '1',
     '_level' => 1,
