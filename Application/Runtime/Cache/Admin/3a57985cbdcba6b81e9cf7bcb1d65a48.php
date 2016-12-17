@@ -31,17 +31,17 @@
                     <a class="button button-little bg-yellow" href="<?php echo U('Index/logout');?>">注销登录</a>
                 </span>
 					<ul class="nav nav-inline admin-nav">
-						<li <?php if(empty($controller)): ?>class="active"<?php endif; ?>>
-							<a href="index.html" class="icon-home"> 开始</a>
+						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
+								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
+								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
 							</ul>
 						</li>
-						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($controller == 'Article'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U($vo['title']);?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
+						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U($vo['title'], array('menu'=>$vo['id']));?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
 							<ul>
-								<?php if(is_array($menu_list)): foreach($menu_list as $key=>$val): ?><li <?php if($menu_active == $val.title): ?>class="active"<?php endif; ?>><a href="<?php echo U($val['title']);?>"><?php echo ($val["name"]); ?></a></li><?php endforeach; endif; ?>
+								<?php if(is_array($vo["_data"])): foreach($vo["_data"] as $key=>$val): ?><li <?php if($menu_active == $val['title']): ?>class="active"<?php endif; ?>><a href="<?php echo U($val['title'], array('menu'=>$val['pid']));?>"><?php echo ($val["name"]); ?></a></li><?php endforeach; endif; ?>
 							</ul>
 						</li><?php endforeach; endif; ?>
 					</ul>
@@ -73,13 +73,15 @@
                 <tr>
                     <th>菜单名</th>
                     <th>权限</th>
+                    <th>是否推荐</th>
                     <th>操作</th>
                 </tr>
                 <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
                         <td><?php echo ($vo['_name']); ?></td>
                         <td><?php echo ($vo['title']); ?></td>
+                        <td><?php if($vo['recom'] == 1): ?>是<?php else: ?>否<?php endif; ?></td>
                         <td>
-                            <?php if($vo["_level"] == 1): ?><a class="button border-blue button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
+                            <?php if($vo["_level"] <= 2): ?><a class="button border-blue button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
                             <?php if($vo["title"] != 'User/listMenu' AND $vo["title"] != 'User/addMenu' AND $vo["title"] != 'User/addRule' AND $vo["title"] != 'User/listRule'): ?><a class="button border-blue button-little" href="<?php echo U('User/editMenu',array('id'=>$vo['id']));?>">修改</a>
                             <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropMenu',array('id'=>$vo['id']));?>'">删除</a><?php endif; ?>
                         </td>

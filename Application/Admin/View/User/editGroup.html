@@ -1,0 +1,33 @@
+<include file="Layout/header" />
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">编辑用户组</a></li>
+            </ul>
+        </div>
+        <form method="post" class="form-x" action="{:U('User/addGroup', array('id'=>$id))}">
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="title">用户组名</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" value="{$info.title}" id="title" name="title" size="50" placeholder="请填写用户组名" data-validate="required:请填写用户组名" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+<include file="Layout/footer" />

@@ -5,7 +5,6 @@ class UserController extends BackendController {
     public function index(){
         $count      = M('Admin')->count();// 查询满足要求的总记录数
         $limit = $this->page($count, 2);
-
         $list = M('Admin')->order('add_time')->limit($limit)->select();
         $this->assign('list', $list);
         $this->display();
@@ -116,6 +115,40 @@ class UserController extends BackendController {
             }
         }else{
             $this->display();
+        }
+    }
+
+    public function editGroup(){
+        $id = I('get.id');
+        if(!$id || !$info = M('Admin_group')->where('group_id='.$id)->find()){
+            $this->error('该用户组不存在！');
+        }
+        $this->assign('id', $id);
+        if(IS_POST){
+            $data = I('post.');
+
+            if(M('Admin_rule')->where('group_id='.$id)->save($data)){
+                $this->success('编辑成功');
+            }else{
+                $this->error('编辑失败');
+            }
+        }else{
+            $this->assign('info', $info);
+            $info = M('Admin_group')->where('status=1')->order('group_id ASC')->find();
+            $this->assign('info', $info);
+            $this->display();
+        }
+    }
+
+    public function dropGroup(){
+        $id = I('get.id');
+        if(!$id){
+            $this->error('该用户组不存在！');
+        }
+        if(M('Admin_group')->where('group_id='.$id)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
         }
     }
 
@@ -253,10 +286,9 @@ class UserController extends BackendController {
 
     public function refreshMenu(){
         $menu_list = M('Admin_menu')->where('status=1')->order('id ASC')->index('id')->select();
-        $tree_list = getTree($menu_list, 'level');
         $dir = RUNTIME_PATH.'Cache/menu.php';
         $menu_file = fopen($dir, "w") or die("Unable to open file!");
-        $text = "<?php\ndefine(\"MENU_LIST\", ".var_export($tree_list, true).");\n?>";
+        $text = "<?php\n\$menu_list = ".var_export($menu_list, true).";\n?>";
         fwrite($menu_file, $text);
         fclose($menu_file);
         $this->success('更新成功');

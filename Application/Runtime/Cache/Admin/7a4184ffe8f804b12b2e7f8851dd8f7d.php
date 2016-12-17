@@ -31,20 +31,17 @@
                     <a class="button button-little bg-yellow" href="<?php echo U('Index/logout');?>">注销登录</a>
                 </span>
 					<ul class="nav nav-inline admin-nav">
-						<li <?php if(empty($controller)): ?>class="active"<?php endif; ?>>
-							<a href="index.html" class="icon-home"> 开始</a>
+						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
+								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
+								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
 							</ul>
 						</li>
-						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['title'] == $controller): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U($vo['title']);?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
+						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U($vo['title'], array('menu'=>$vo['id']));?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
 							<ul>
-								<?php if(is_array($vo)): foreach($vo as $key=>$val): ?><li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li <?php if($action == 'addArticle'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addArticle');?>">添加文章</a></li>
-								<li <?php if($action == 'addNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addNotice');?>">添加公告</a></li>
-								<li <?php if($action == 'listNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/listNotice');?>">公告管理</a></li><?php endforeach; endif; ?>
+								<?php if(is_array($vo["_data"])): foreach($vo["_data"] as $key=>$val): ?><li <?php if($menu_active == $val['title']): ?>class="active"<?php endif; ?>><a href="<?php echo U($val['title'], array('menu'=>$val['pid']));?>"><?php echo ($val["name"]); ?></a></li><?php endforeach; endif; ?>
 							</ul>
 						</li><?php endforeach; endif; ?>
 					</ul>
@@ -65,7 +62,7 @@
     }
 </style>
 <div class="admin">
-    <form method="post">
+    <form method="post" action="<?php echo U('Article/dropArticle');?>" id="info_form">
         <div class="panel admin-panel">
             <div class="panel-head"><strong>文章列表</strong></div>
             <div class="padding border-bottom">
@@ -97,24 +94,34 @@
                         <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticle',array('id'=>$vo['id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticle',array('id'=>$vo['id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </table>
-            <div class="panel-foot text-center">
-                <ul class="pagination">
-                    <li><a href="#">上一页</a></li>
-                </ul>
-                <ul class="pagination pagination-group">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="#">下一页</a></li>
-                </ul>
+            <div class="panel-foot text-center page">
+                <?php echo ($page); ?>
             </div>
         </div>
     </form>
 </div>
+<script>
+    $(function(){
+        $('#dropBatch').click(function(){
+            if($("#info_form").find(':checkbox:checked').length <= 0){
+                swal("", "请选择用户!", "error");
+                return false;
+            }else{
+                swal({
+                    title: "",
+                    text: "您确定要删除吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: true,
+                    confirmButtonText: "确定",
+                    confirmButtonColor: "#ec6c62"
+                }, function() {
+                    $("#info_form").submit();
+                });
+            }
+        });
+    })
+</script>
 </body>
 
 </html>
