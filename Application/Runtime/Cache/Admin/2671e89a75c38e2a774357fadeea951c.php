@@ -31,36 +31,19 @@
                     <a class="button button-little bg-yellow" href="<?php echo U('Index/logout');?>">注销登录</a>
                 </span>
 					<ul class="nav nav-inline admin-nav">
-						<li <?php if(empty($controller)): ?>class="active"<?php endif; ?>>
+						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
 							<a href="index.html" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="<?php echo U('Foods/listCuisine');?>">菜系管理</a></li>
 								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
 								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
 							</ul>
 						</li>
-						<li <?php if($controller == 'Article'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U('Article/index');?>" class="icon-file-text">文章</a>
+						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
+							<a href="<?php echo U($vo['title'], array('menu'=>$vo['id']));?>" class="icon-file-text"><?php echo ($vo["name"]); ?></a>
 							<ul>
-								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li <?php if($action == 'addArticle'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addArticle');?>">添加文章</a></li>
-								<li <?php if($action == 'addNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/addNotice');?>">添加公告</a></li>
-								<li <?php if($action == 'listNotice'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Article/listNotice');?>">公告管理</a></li>
+								<?php if(is_array($vo["_data"])): foreach($vo["_data"] as $key=>$val): ?><li <?php if($menu_active == $val['title']): ?>class="active"<?php endif; ?>><a href="<?php echo U($val['title'], array('menu'=>$val['pid']));?>"><?php echo ($val["name"]); ?></a></li><?php endforeach; endif; ?>
 							</ul>
-						</li>
-						<li <?php if($controller == 'User'): ?>class="active"<?php endif; ?>>
-							<a href="<?php echo U('User/index');?>" class="icon-user">管理员</a>
-							<ul>
-								<li <?php if($action == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/index');?>">管理员列表</a></li>
-								<li <?php if($action == 'addUser'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addUser');?>">添加管理员</a></li>
-								<li <?php if($action == 'listGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listGroup');?>">用户组管理</a></li>
-								<li <?php if($action == 'addGroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addGroup');?>">添加用户组</a></li>
-								<li <?php if($action == 'listRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listRule');?>">权限管理</a></li>
-								<li <?php if($action == 'addRule'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addRule');?>">添加权限</a></li>
-								<li <?php if($action == 'listMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/listMenu');?>">菜单管理</a></li>
-								<li <?php if($action == 'addMenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('User/addMenu');?>">添加菜单</a></li>
-							</ul>
-						</li>
+						</li><?php endforeach; endif; ?>
 					</ul>
 				</div>
 				<div class="admin-bread">
@@ -90,7 +73,7 @@
                         <div class="field">
                             <select name="pid">
                                 <option value="0">一级菜单</option>
-                                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo["id"] == $info['pid']): ?>selected<?php endif; ?>><?php echo ($vo['_name']); ?></option><?php endforeach; endif; ?>
+                                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo['id'] == $info['pid']): ?>selected<?php endif; ?>><?php echo ($vo['_name']); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
@@ -108,6 +91,19 @@
                         </div>
                         <div class="field">
                             <input type="text" class="input" id="title" name="title" value="<?php echo ($info["title"]); ?>" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Menu/index" data-validate="required:请填写菜单" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>推荐到开始菜单</label>
+                        </div>
+                        <div class="field">
+                            <div class="button-group button-group-small radio">
+                                <label <?php if($info["recom"] == 1): ?>class="button active"<?php else: ?>class="button"<?php endif; ?>>
+                                    <input name="recom" value="1" <?php if($info['recom'] == 1): ?>checked="checked"<?php endif; ?> type="radio"><span class="icon icon-check"></span> 是</label>
+                                <label <?php if($info["recom"] == 0): ?>class="button active"<?php else: ?>class="button"<?php endif; ?>>
+                                    <input name="recom" value="0" <?php if($info['recom'] == 0): ?>checked="checked"<?php endif; ?> type="radio"><span class="icon icon-times"></span> 否</label>
+                            </div>
                         </div>
                     </div>
                 </div>

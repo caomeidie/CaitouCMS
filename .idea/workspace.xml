@@ -70,7 +70,7 @@
       <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Layout/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="180">
               <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding />
             </state>
@@ -506,7 +506,7 @@
       <option name="presentableId" value="Default" />
       <updated>1477381691800</updated>
       <workItem from="1481807027454" duration="4249000" />
-      <workItem from="1481894067436" duration="3049000" />
+      <workItem from="1481894067436" duration="3240000" />
     </task>
     <task id="LOCAL-00001" summary="cache menu into files">
       <created>1481807473068</created>
@@ -519,7 +519,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7298000" />
+    <option name="totallyTimeSpent" value="7489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="415" y="233" width="1502" height="744" extended-state="0" />
@@ -943,7 +943,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Layout/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="180">
           <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding />
         </state>
