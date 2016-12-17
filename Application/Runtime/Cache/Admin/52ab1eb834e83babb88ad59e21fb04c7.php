@@ -32,10 +32,17 @@
                 </span>
 					<ul class="nav nav-inline admin-nav">
 						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
+<<<<<<< HEAD
 							<a href="index.html" class="icon-home"> 开始</a>
 							<ul>
 								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
 								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
+=======
+							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
+							<ul>
+								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
+								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
+>>>>>>> 4d41d782592cc687a39147aaa298598625926641
 							</ul>
 						</li>
 						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
@@ -99,9 +106,15 @@
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
+<<<<<<< HEAD
                                 <label class="button active">
                                     <input name="recom" value="1" checked="checked" type="radio"><span class="icon icon-check"></span> 是</label>
                                 <label class="button">
+=======
+                                <label class="button">
+                                    <input name="recom" value="1" checked="checked" type="radio"><span class="icon icon-check"></span> 是</label>
+                                <label class="button active">
+>>>>>>> 4d41d782592cc687a39147aaa298598625926641
                                     <input name="recom" value="0" type="radio"><span class="icon icon-times"></span> 否</label>
                             </div>
                         </div>

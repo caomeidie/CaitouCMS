@@ -32,17 +32,10 @@
                 </span>
 					<ul class="nav nav-inline admin-nav">
 						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
-<<<<<<< HEAD
-							<a href="index.html" class="icon-home"> 开始</a>
-							<ul>
-								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
-=======
 							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
 							<ul>
 								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
 								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
->>>>>>> 4d41d782592cc687a39147aaa298598625926641
 							</ul>
 						</li>
 						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
@@ -63,30 +56,36 @@
 			</div>
 		</div>
 <div class="admin">
-    <form method="post">
-        <div class="panel admin-panel">
-            <div class="panel-head"><strong>用户组列表</strong></div>
-            <div class="padding border-bottom">
-                <a href="<?php echo U('User/addGroup');?>" class="button button-small border-green">添加用户组</a>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>用户组名</th>
-                    <th>操作</th>
-                </tr>
-                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
-                        <td><?php echo ($vo['title']); ?></td>
-                        <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/editGroup',array('id'=>$vo['group_id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropGroup',array('id'=>$vo['group_id']));?>'">删除</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateRule',array('id'=>$vo['group_id']));?>">分配权限</a>
-                            <a class="button border-blue button-little" href="<?php echo U('User/allocateUser',array('id'=>$vo['group_id']));?>">添加成员</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-            </table>
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">编辑用户组</a></li>
+            </ul>
         </div>
-    </form>
+        <form method="post" class="form-x" action="<?php echo U('User/addGroup', array('id'=>$id));?>">
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="title">用户组名</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" value="<?php echo ($info["title"]); ?>" id="title" name="title" size="50" placeholder="请填写用户组名" data-validate="required:请填写用户组名" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
 </div>
+<script type="text/javascript">
+
+</script>
 </body>
 
 </html>

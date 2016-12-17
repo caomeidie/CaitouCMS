@@ -62,7 +62,7 @@
     }
 </style>
 <div class="admin">
-    <form method="post">
+    <form method="post" action="<?php echo U('Article/dropArticle');?>" id="info_form">
         <div class="panel admin-panel">
             <div class="panel-head"><strong>文章列表</strong></div>
             <div class="padding border-bottom">
@@ -94,24 +94,34 @@
                         <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticle',array('id'=>$vo['id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticle',array('id'=>$vo['id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </table>
-            <div class="panel-foot text-center">
-                <ul class="pagination">
-                    <li><a href="#">上一页</a></li>
-                </ul>
-                <ul class="pagination pagination-group">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="#">下一页</a></li>
-                </ul>
+            <div class="panel-foot text-center page">
+                <?php echo ($page); ?>
             </div>
         </div>
     </form>
 </div>
+<script>
+    $(function(){
+        $('#dropBatch').click(function(){
+            if($("#info_form").find(':checkbox:checked').length <= 0){
+                swal("", "请选择用户!", "error");
+                return false;
+            }else{
+                swal({
+                    title: "",
+                    text: "您确定要删除吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: true,
+                    confirmButtonText: "确定",
+                    confirmButtonColor: "#ec6c62"
+                }, function() {
+                    $("#info_form").submit();
+                });
+            }
+        });
+    })
+</script>
 </body>
 
 </html>
