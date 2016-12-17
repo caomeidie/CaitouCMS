@@ -11,19 +11,17 @@ class BackendController extends Controller {
 		}
 		if(is_file(RUNTIME_PATH.'Cache/menu.php')){
 			require_once RUNTIME_PATH.'Cache/menu.php';
-			$this->assign('menu_list',MENU_LIST);
+			$this->assign('menu_list',$menu_text);
 		}else{
 			$menu_list = M('Admin_menu')->where('status=1')->order('id ASC')->index('id')->select();
 			$tree_list = getTree($menu_list, 'level');
 			$dir = RUNTIME_PATH.'Cache/menu.php';
 			$menu_file = fopen($dir, "w") or die("Unable to open file!");
-			$text = "<?php\ndefine(\"MENU_LIST\", ".var_export($tree_list, true).");\n?>";
+			$text = "<?php\n\$menu_text = ".var_export($tree_list, true).";\n?>";
 			fwrite($menu_file, $text);
 			fclose($menu_file);
-			define("MENU_LIST",$tree_list);
 			$this->assign('menu_list',$tree_list);
 		}
-
 		$menu = I('get.menu') ? I('get.menu') : 0;
 		if(!$menu){
 			$start_menu_list = M('Admin_menu')->where('status=1 AND recom=1')->order('id ASC')->index('id')->select();
