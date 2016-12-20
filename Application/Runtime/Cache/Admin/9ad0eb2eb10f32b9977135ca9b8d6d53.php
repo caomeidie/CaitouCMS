@@ -62,12 +62,12 @@
     }
 </style>
 <div class="admin">
-    <form method="post" action="<?php echo U('Article/dropArticleColumn');?>" id="info_form">
+    <form method="post" action="<?php echo U('Article/dropArticleColumnBatch');?>" id="info_form">
         <div class="panel admin-panel">
             <div class="panel-head"><strong>栏目列表</strong></div>
             <div class="padding border-bottom">
-                <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
-                <a href="<?php echo U('Article/addArticle');?>" class="button button-small border-green">添加栏目</a>
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
+                <a href="<?php echo U('Article/addArticleColumn');?>" class="button button-small border-green">添加栏目</a>
                 <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
             </div>
             <table class="table table-hover">
@@ -80,12 +80,12 @@
                 </tr>
                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td>
-                            <input type="checkbox" name="id" value="<?php echo ($vo["id"]); ?>" />
+                            <input type="checkbox" name="id[]" value="<?php echo ($vo["column_id"]); ?>" />
                         </td>
                         <td><?php echo ($vo["column_name"]); ?></td>
                         <td><?php echo ($vo["sort"]); ?></td>
                         <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
-                        <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticleColumn',array('id'=>$vo['id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticleColumn',array('id'=>$vo['id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
+                        <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticleColumn',array('id'=>$vo['column_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticleColumn',array('id'=>$vo['column_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </table>
             <div class="panel-foot text-center page">

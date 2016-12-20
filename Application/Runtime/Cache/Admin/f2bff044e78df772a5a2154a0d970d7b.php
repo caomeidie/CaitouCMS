@@ -78,9 +78,9 @@
                         <td><?php echo ($vo['_name']); ?></td>
                         <td><?php echo ($vo['title']); ?></td>
                         <td>
-                            <a class="button border-blue button-little" href="<?php echo U('User/addRule',array('pid'=>$vo['id']));?>">添加子权限</a>
+                            <a class="button border-green button-little" href="<?php echo U('User/addRule',array('pid'=>$vo['id']));?>">添加子权限</a>
                             <a class="button border-blue button-little" href="<?php echo U('User/editRule',array('id'=>$vo['id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropRule',array('id'=>$vo['id']));?>'">删除</a>
+                            <a class="button border-yellow button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropRule',array('id'=>$vo['id']));?>'">删除</a>
                         </td>
                     </tr><?php endforeach; endif; ?>
             </table>

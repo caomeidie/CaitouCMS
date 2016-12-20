@@ -160,5 +160,95 @@ $menu_list = array (
     'type' => '1',
     'recom' => '0',
   ),
+  22 => 
+  array (
+    'id' => '22',
+    'pid' => '9',
+    'name' => '修改',
+    'title' => 'Article/editArticle',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  23 => 
+  array (
+    'id' => '23',
+    'pid' => '20',
+    'name' => '修改',
+    'title' => 'Article/editArticleColumn',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  24 => 
+  array (
+    'id' => '24',
+    'pid' => '2',
+    'name' => '修改',
+    'title' => 'User/editUser',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  25 => 
+  array (
+    'id' => '25',
+    'pid' => '4',
+    'name' => '修改',
+    'title' => 'User/editGroup',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  26 => 
+  array (
+    'id' => '26',
+    'pid' => '4',
+    'name' => '分配权限',
+    'title' => 'User/allocateRule',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '1',
+  ),
+  27 => 
+  array (
+    'id' => '27',
+    'pid' => '4',
+    'name' => '添加成员',
+    'title' => 'User/allocateUser',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  29 => 
+  array (
+    'id' => '29',
+    'pid' => '6',
+    'name' => '修改',
+    'title' => 'User/editRule',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  30 => 
+  array (
+    'id' => '30',
+    'pid' => '17',
+    'name' => '修改',
+    'title' => 'User/editMenu',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
+  31 => 
+  array (
+    'id' => '31',
+    'pid' => '14',
+    'name' => '修改',
+    'title' => 'Article/editNotice',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+  ),
 );
 ?>

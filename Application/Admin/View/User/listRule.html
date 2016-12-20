@@ -23,9 +23,9 @@
                         <td>{$vo['_name']}</td>
                         <td>{$vo['title']}</td>
                         <td>
-                            <a class="button border-blue button-little" href="{:U('User/addRule',array('pid'=>$vo['id']))}">添加子权限</a>
+                            <a class="button border-green button-little" href="{:U('User/addRule',array('pid'=>$vo['id']))}">添加子权限</a>
                             <a class="button border-blue button-little" href="{:U('User/editRule',array('id'=>$vo['id']))}">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='{:U('User/dropRule',array('id'=>$vo['id']))}'">删除</a>
+                            <a class="button border-yellow button-little" href="javascript:if(confirm('确定删除？'))location='{:U('User/dropRule',array('id'=>$vo['id']))}'">删除</a>
                         </td>
                     </tr>
                 </foreach>

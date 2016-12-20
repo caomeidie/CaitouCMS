@@ -26,7 +26,7 @@
                             <label for="profile">概述</label>
                         </div>
                         <div class="field">
-                            <textarea class="input" id="profile" name="profile" rows="5" cols="50" placeholder="概述">{$info.article_profile}</textarea>
+                            <textarea class="input" id="profile" name="profile" rows="5" cols="50" placeholder="概述">{$info.profile}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -35,9 +35,10 @@
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
-                                <select name="type">
-                                    <option value="1" <if condition="$info.article_type eq 1">selected</if>>文章</option>
-                                    <option value="2" <if condition="$info.article_type eq 2">selected</if>>公告</option>
+                                <select name="article_column">
+                                    <foreach name="column_list" item="column">
+                                        <option value="{$column.column_id}" <if condition="$info.article_column eq $column['column_id']">selected</if>>{$column.column_name}</option>
+                                    </foreach>
                                 </select>
                             </div>
                         </div>
@@ -62,7 +63,7 @@
 <script type="text/javascript">
     var ue = UE.getEditor('editor');
     ue.addListener("ready", function () {
-        ue.setContent('{$info.article_content}');
+        ue.setContent('{$info.content}');
     });
 </script>
 <include file="Layout/footer" />

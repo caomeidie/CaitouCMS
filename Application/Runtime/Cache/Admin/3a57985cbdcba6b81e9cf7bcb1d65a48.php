@@ -32,11 +32,7 @@
                 </span>
 					<ul class="nav nav-inline admin-nav">
 						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
-<<<<<<< HEAD
-							<a href="index.html" class="icon-home"> 开始</a>
-=======
 							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
->>>>>>> 4d41d782592cc687a39147aaa298598625926641
 							<ul>
 								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
 								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
@@ -71,7 +67,7 @@
             <div class="panel-head"><strong>菜单列表</strong></div>
             <div class="padding border-bottom">
                 <a href="<?php echo U('User/addMenu');?>" class="button button-small border-green">添加菜单</a>
-                <a href="<?php echo U('User/refreshMenu');?>" class="button button-small border-red">更新菜单</a>
+                <a href="javascript:if(confirm('确定更新菜单？'))location='<?php echo U('User/refreshMenu');?>'" class="button button-small border-red">更新菜单</a>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -85,9 +81,9 @@
                         <td><?php echo ($vo['title']); ?></td>
                         <td><?php if($vo['recom'] == 1): ?>是<?php else: ?>否<?php endif; ?></td>
                         <td>
-                            <?php if($vo["_level"] <= 2): ?><a class="button border-blue button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
+                            <?php if($vo["_level"] <= 2): ?><a class="button border-green button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
                             <?php if($vo["title"] != 'User/listMenu' AND $vo["title"] != 'User/addMenu' AND $vo["title"] != 'User/addRule' AND $vo["title"] != 'User/listRule'): ?><a class="button border-blue button-little" href="<?php echo U('User/editMenu',array('id'=>$vo['id']));?>">修改</a>
-                            <a class="button border-blue button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropMenu',array('id'=>$vo['id']));?>'">删除</a><?php endif; ?>
+                            <a class="button border-yellow button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropMenu',array('id'=>$vo['id']));?>'">删除</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; ?>
             </table>

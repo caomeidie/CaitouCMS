@@ -34,8 +34,8 @@
 						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
 							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
 							<ul>
-								<li><a href="<?php echo U('Home/index');?>">平台首页</a></li>
-								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title']);?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
+								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
+								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
 							</ul>
 						</li>
 						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
@@ -65,13 +65,13 @@
                 <li class="active"><a href="#tab-base">编辑文章</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="<?php echo U('Article/editArticle',array('id'=>$info['id']));?>" enctype="multipart/form-data" >
+        <form method="post" class="form-x" action="<?php echo U('Article/editArticle',array('id'=>$info['article_id']));?>" enctype="multipart/form-data" >
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
                     <div class="form-group">
                         <div class="label">
-                            <label for="subtitle">标题</label>
+                            <label for="title">标题</label>
                         </div>
                         <div class="field">
                             <input type="text" class="input" id="title" name="title" value="<?php echo ($info["article_title"]); ?>" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
@@ -79,10 +79,10 @@
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label for="foods_name">概述</label>
+                            <label for="profile">概述</label>
                         </div>
                         <div class="field">
-                            <textarea class="input" id="profile" name="profile" rows="5" cols="50" placeholder="概述"><?php echo ($info["article_profile"]); ?></textarea>
+                            <textarea class="input" id="profile" name="profile" rows="5" cols="50" placeholder="概述"><?php echo ($info["profile"]); ?></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -91,9 +91,8 @@
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
-                                <select name="type">
-                                    <option value="1" <?php if($info["article_type"] == 1): ?>selected<?php endif; ?>>文章</option>
-                                    <option value="2" <?php if($info["article_type"] == 2): ?>selected<?php endif; ?>>公告</option>
+                                <select name="article_column">
+                                    <?php if(is_array($column_list)): foreach($column_list as $key=>$column): ?><option value="<?php echo ($column["column_id"]); ?>" <?php if($info["article_column"] == $column['column_id']): ?>selected<?php endif; ?>><?php echo ($column["column_name"]); ?></option><?php endforeach; endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -118,7 +117,7 @@
 <script type="text/javascript">
     var ue = UE.getEditor('editor');
     ue.addListener("ready", function () {
-        ue.setContent('<?php echo ($info["article_content"]); ?>');
+        ue.setContent('<?php echo ($info["content"]); ?>');
     });
 </script>
 </body>

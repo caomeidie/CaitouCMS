@@ -23,7 +23,7 @@ class UserController extends BackendController {
                     M('Admin_group_access')->data(array('admin_id'=>$id, 'group_id'=>$data['group']))->add();
                 }
 
-                $this->success('添加用户成功', U('index'));
+                $this->success('添加用户成功', U('User/index'));
             }else{
                 $this->error('添加用户失败');
             }
@@ -55,7 +55,7 @@ class UserController extends BackendController {
             if(!D('Admin')->where(array('admin_id'=>$id))->save($data) && !(M('Admin_group_access')->data(array('admin_id'=>$id, 'group_id'=>$data_form['group']))->add())){
                 $this->success('编辑用户失败');
             }else{
-                $this->error('编辑用户成功', U('index'));
+                $this->error('编辑用户成功', U('User/index'));
             }
         }else{
             $list = M('Admin_group')->select();
@@ -74,9 +74,9 @@ class UserController extends BackendController {
 
         if(M('Admin')->where(array('admin_id'=>$id))->delete()){
             M('Admin_group_access')->where(array('admin_id'=>$id))->delete();
-            $this->success('删除用户成功', U('index'));
+            $this->success('删除用户成功', U('User/index'));
         }else{
-            $this->error('删除用户失败', U('index'));
+            $this->error('删除用户失败', U('User/index'));
         }
     }
 
@@ -91,9 +91,9 @@ class UserController extends BackendController {
 
         if(M('Admin')->where(array('admin_id'=>array('in', $id)))->delete()){
             M('Admin_group_access')->where(array('admin_id'=>array('in', $id)))->delete();
-            $this->success('删除用户成功', U('index'));
+            $this->success('删除用户成功', U('User/index'));
         }else{
-            $this->error('删除用户失败', U('index'));
+            $this->error('删除用户失败', U('User/index'));
         }
     }
 
@@ -109,7 +109,7 @@ class UserController extends BackendController {
             $data['title'] = $form_data['title'];
 
             if(M('Admin_group')->add($data)){
-                $this->success('添加成功');
+                $this->success('添加成功', U('User/listGroup'));
             }else{
                 $this->error('添加失败');
             }
@@ -128,13 +128,11 @@ class UserController extends BackendController {
             $data = I('post.');
 
             if(M('Admin_rule')->where('group_id='.$id)->save($data)){
-                $this->success('编辑成功');
+                $this->success('编辑成功', U('User/listGroup'));
             }else{
                 $this->error('编辑失败');
             }
         }else{
-            $this->assign('info', $info);
-            $info = M('Admin_group')->where('status=1')->order('group_id ASC')->find();
             $this->assign('info', $info);
             $this->display();
         }
@@ -146,9 +144,9 @@ class UserController extends BackendController {
             $this->error('该用户组不存在！');
         }
         if(M('Admin_group')->where('group_id='.$id)->delete()){
-            $this->success('删除成功');
+            $this->success('删除成功', U('User/listGroup'));
         }else{
-            $this->error('删除失败');
+            $this->error('删除失败', U('User/listGroup'));
         }
     }
 
@@ -164,7 +162,7 @@ class UserController extends BackendController {
             $data = I('post.');
 
             if(M('Admin_rule')->add($data)){
-                $this->success('添加成功');
+                $this->success('添加成功', U('User/listRule'));
             }else{
                 $this->error('添加失败');
             }
@@ -193,7 +191,7 @@ class UserController extends BackendController {
             $data = I('post.');
 
             if(M('Admin_rule')->where('id='.$id)->save($data)){
-                $this->success('编辑成功');
+                $this->success('编辑成功', U('User/listRule'));
             }else{
                 $this->error('编辑失败');
             }
@@ -212,9 +210,9 @@ class UserController extends BackendController {
             $this->error('该权限不存在！');
         }
         if(M('Admin_rule')->where('id='.$id)->delete()){
-            $this->success('删除成功');
+            $this->success('删除成功', U('User/listRule'));
         }else{
-            $this->error('删除失败');
+            $this->error('删除失败', U('User/listRule'));
         }
     }
 
@@ -230,7 +228,7 @@ class UserController extends BackendController {
             $data = I('post.');
 
             if(M('Admin_menu')->add($data)){
-                $this->success('添加成功');
+                $this->success('添加成功', U('User/listMenu'));
             }else{
                 $this->error('添加失败');
             }
@@ -259,7 +257,7 @@ class UserController extends BackendController {
             $data = I('post.');
 
             if(M('Admin_menu')->where('id='.$id)->save($data)){
-                $this->success('编辑成功');
+                $this->success('编辑成功', U('User/listMenu'));
             }else{
                 $this->error('编辑失败');
             }
@@ -278,9 +276,9 @@ class UserController extends BackendController {
             $this->error('该菜单不存在！');
         }
         if(M('Admin_menu')->where('id='.$id)->delete()){
-            $this->success('删除成功');
+            $this->success('删除成功', U('User/listMenu'));
         }else{
-            $this->error('删除失败');
+            $this->error('删除失败', U('User/listMenu'));
         }
     }
 
@@ -291,7 +289,7 @@ class UserController extends BackendController {
         $text = "<?php\n\$menu_list = ".var_export($menu_list, true).";\n?>";
         fwrite($menu_file, $text);
         fclose($menu_file);
-        $this->success('更新成功');
+        $this->success('更新成功', U('User/listMenu'));
     }
 
     public function allocateRule(){
@@ -304,7 +302,7 @@ class UserController extends BackendController {
             $form_data=I('post.');
             $data['rules']=implode(',', $form_data['rule_ids']);
             if(M('Admin_group')->where(array('group_id'=>$id))->save($data)){
-                $this->success('分配成功');
+                $this->success('分配成功', U('User/listGroup'));
             }else{
                 $this->error('分配失败');
             }
@@ -331,9 +329,13 @@ class UserController extends BackendController {
         }
         $this->assign('id', $id);
         if($username = I('get.username')){
-            $user_list = M('Admin')->alias('a')->field('a.*, aga.group_id')->join('__ADMIN_GROUP_ACCESS__ aga ON a.admin_id=aga.admin_id', 'LEFT')->where(array('a.admin_name'=>$username))->select();
+            $user_list = M('Admin')->alias('a')->field('a.*, aga.group_id')->join('__ADMIN_GROUP_ACCESS__ aga ON a.admin_id=aga.admin_id', 'LEFT')->where(array('a.admin_name'=>array('like', '%'.$username.'%')))->select();
             $this->assign('user_list', $user_list);
         }
+
+        $group_user_list = M('Admin')->alias('a')->field('a.*, aga.group_id')->join('__ADMIN_GROUP_ACCESS__ aga ON a.admin_id=aga.admin_id', 'LEFT')->where(array('aga.group_id'=>$id))->select();
+        $this->assign('group_user_list', $group_user_list);
+
         $info = M('Admin_rule')->where('id='.$id)->find();
         $this->assign('info', $info);
         $this->display();
@@ -356,7 +358,7 @@ class UserController extends BackendController {
             $data['admin_id'] = $admin_id;
 
             if(M('Admin_group_access')->data($data)->add()){
-                $this->success('分配用户成功');
+                $this->success('分配用户成功', U('User/listGroup'));
             }else{
                 $this->error('分配用户失败');
             }
@@ -369,7 +371,7 @@ class UserController extends BackendController {
             $this->error('该用户不存在！');
         }
         if(M('Admin_group_access')->where(array('admin_id'=>$admin_id))->delete()){
-            $this->error('从用户组中删除成功！');
+            $this->success('从用户组中删除成功！', U('User/listGroup'));
         }else{
             $this->error('从用户组中删除失败！');
         }

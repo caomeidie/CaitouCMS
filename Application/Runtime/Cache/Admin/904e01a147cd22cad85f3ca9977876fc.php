@@ -32,17 +32,10 @@
                 </span>
 					<ul class="nav nav-inline admin-nav">
 						<li <?php if(0 == $menu): ?>class="active"<?php endif; ?>>
-<<<<<<< HEAD
-							<a href="index.html" class="icon-home"> 开始</a>
-							<ul>
-								<li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
-								<li><a href="<?php echo U('User/index');?>">管理员管理</a></li>
-=======
 							<a href="<?php echo U('Home/index');?>" class="icon-home"> 开始</a>
 							<ul>
 								<li <?php if($menu_active == 'Home/index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Home/index', array('menu'=>0));?>">平台首页</a></li>
 								<?php if(!empty($start_menu_list)): if(is_array($start_menu_list)): foreach($start_menu_list as $key=>$vo): ?><li><a href="<?php echo U($vo['title'], array('menu'=>$vo['pid']));?>"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; endif; ?>
->>>>>>> 4d41d782592cc687a39147aaa298598625926641
 							</ul>
 						</li>
 						<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li <?php if($vo['id'] == $menu): ?>class="active"<?php endif; ?>>
@@ -62,8 +55,48 @@
 				</div>
 			</div>
 		</div>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-base">添加公告</a></li>
+            </ul>
+        </div>
+        <form method="post" class="form-x" action="<?php echo U('Article/addNotice');?>" enctype="multipart/form-data" >
+            <div class="tab-body">
+                <br />
+                <div class="tab-panel active" id="tab-base">
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="title">标题</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="title" name="title" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="content">内容</label>
+                        </div>
+                        <div class="field">
+                            <script id="content" name="content" type="text/plain" style="width:100%;height:300px;"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button class="button bg-main" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
 </div>
+<script type="text/javascript">
+    var ue = UE.getEditor('content');
+</script>
 </body>
 
 </html>

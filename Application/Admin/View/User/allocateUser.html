@@ -8,23 +8,47 @@
                 <input class="button button-small border-green" type="submit" value="搜索用户">
             </form>
         </div>
+        <div class="panel-head"><strong>已添加用户</strong></div>
         <table class="table table-hover">
             <tr>
-                <th>用户组名</th>
+                <th>用户名</th>
                 <th>操作</th>
             </tr>
+            <notempty name="group_user_list">
+            <foreach name="group_user_list" item="vo">
+                <tr>
+                    <td>{$vo['admin_name']}</td>
+                    <td>
+                        <a class="button border-red button-little" href="javascript:if(confirm('确定从用户组删除？'))location='{:U('User/dropAllocateUser',array('admin_id'=>$vo['admin_id']))}'">从用户组删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            <else />
+                <tr><td rowspan="2">没有已添加用户</td></tr>
+            </notempty>
+        </table>
+        <div class="panel-head"><strong>查询到用户</strong></div>
+        <table class="table table-hover">
+            <tr>
+                <th>用户名</th>
+                <th>操作</th>
+            </tr>
+            <notempty name="user_list">
             <foreach name="user_list" item="vo">
                 <tr>
                     <td>{$vo['admin_name']}</td>
                     <td>
-                        <empty name="vo.group_id">
-                            <a class="button border-blue button-little" href="{:U('User/doAllocateUser',array('id'=>$id, 'admin_id'=>$vo['id']))}">添加到用户组</a>
+                        <if condition="$vo.group_id neq $id">
+                            <a class="button border-blue button-little" href="{:U('User/doAllocateUser',array('id'=>$id, 'admin_id'=>$vo['admin_id']))}">添加到用户组</a>
                         <else />
-                            <a class="button border-red button-little" href="javascript:if(confirm('确定从用户组删除？'))location='{:U('User/dropAllocateUser',array('admin_id'=>$vo['id']))}'">从用户组删除</a>
-                        </empty>
+                            <a class="button border-red button-little" href="javascript:if(confirm('确定从用户组删除？'))location='{:U('User/dropAllocateUser',array('admin_id'=>$vo['admin_id']))}'">从用户组删除</a>
+                        </if>
                     </td>
                 </tr>
             </foreach>
+            <else />
+                <tr><td rowspan="2">没有搜索到用户</td></tr>
+            </notempty>
         </table>
     </div>
 </div>

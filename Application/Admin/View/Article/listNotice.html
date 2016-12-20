@@ -1,4 +1,70 @@
 <include file="Layout/header" />
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
 <div class="admin">
+    <form method="post" action="{:U('Article/dropNoticeBatch')}" id="info_form">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>公告列表</strong></div>
+            <div class="padding border-bottom">
+                <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
+                <a href="{:U('Article/addNotice')}" class="button button-small border-green">添加公告</a>
+                <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th width="45">选择</th>
+                    <th width="*">标题</th>
+                    <th width="120">状态</th>
+                    <th width="200">添加时间</th>
+                    <th width="100">操作</th>
+                </tr>
+                <volist name="list" id="vo">
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="id[]" value="{$vo.notice_id}" />
+                        </td>
+                        <td>{$vo.notice_title}</td>
+                        <td>
+                            <switch name="vo.notice_status" >
+                                <case value="1">正常</case>
+                                <default />关闭
+                            </switch>
+                        </td>
+                        <td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
+                        <td><a class="button border-blue button-little" href="{:U('Article/editNotice',array('id'=>$vo['notice_id']))}">修改</a> <a class="button border-yellow button-little" href="{:U('Article/dropNotice',array('id'=>$vo['notice_id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
+                    </tr>
+                </volist>
+            </table>
+            <div class="panel-foot text-center page">
+                {$page}
+            </div>
+        </div>
+    </form>
 </div>
+<script>
+    $(function(){
+        $('#dropBatch').click(function(){
+            if($("#info_form").find(':checkbox:checked').length <= 0){
+                swal("", "请选择用户!", "error");
+                return false;
+            }else{
+                swal({
+                    title: "",
+                    text: "您确定要删除吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    closeOnConfirm: true,
+                    confirmButtonText: "确定",
+                    confirmButtonColor: "#ec6c62"
+                }, function() {
+                    $("#info_form").submit();
+                });
+            }
+        });
+    })
+</script>
 <include file="Layout/footer" />

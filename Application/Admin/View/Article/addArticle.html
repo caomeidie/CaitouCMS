@@ -35,9 +35,10 @@
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
-                                <select name="type">
-                                    <option value="1" selected>文章</option>
-                                    <option value="2">公告</option>
+                                <select name="article_column">
+                                    <foreach name="column_list" item="column">
+                                    <option value="{$column.column_id}">{$column.column_name}</option>
+                                    </foreach>
                                 </select>
                             </div>
                         </div>

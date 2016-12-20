@@ -21,13 +21,21 @@ class BackendController extends Controller {
 			fclose($menu_file);
 			$this->assign('menu_list',getTree($menu_list, 'level'));
 		}
+
+		$a_c = CONTROLLER_NAME.'/'.ACTION_NAME;
 		$menu = I('get.menu') ? I('get.menu') : 0;
+		if($menu == 0){
+			if($menu_arr = $this->parent_menu($a_c, $menu_list)){
+				$menu = $menu_arr['top_menu'];
+				$a_c = $menu_arr['title'];
+			}
+		}
 		if(!$menu){
 			$start_menu_list = M('Admin_menu')->where('status=1 AND recom=1')->order('id ASC')->index('id')->select();
 			$this->assign('start_menu_list',$start_menu_list);
 		}
-		$this->assign('menu',$menu);
-		$this->assign('menu_active',CONTROLLER_NAME.'/'.ACTION_NAME);
+		$this->assign('menu', $menu);
+		$this->assign('menu_active', $a_c);
 
 	}
 
@@ -40,5 +48,21 @@ class BackendController extends Controller {
         $show       = $Page->show();// 分页显示输出
 		$this->assign('page',$show);
 		return $Page->firstRow.','.$Page->listRows;
+	}
+
+	private function parent_menu($value, $array){
+		foreach($array as $key=>$val){
+			if($val['title'] == $value){
+				if($array[$val['id']]['pid'] == 0){
+					return array('top_menu'=>$val['id'], 'title'=>$val['title']);
+				}elseif($array[$array[$key]['pid']]['pid'] != 0){
+					return array('top_menu'=>$array[$array[$key]['pid']]['pid'], 'title'=>$array[$array[$key]['pid']]['title']);
+				}else{
+					return array('top_menu'=>$array[$val['id']]['pid'], 'title'=>$array[$val['id']]['title']);
+				}
+
+			}
+		}
+		return false;
 	}
 }
