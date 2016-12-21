@@ -71,10 +71,10 @@
                 <div class="tab-panel active" id="tab-base">
                     <div class="form-group">
                         <div class="label">
-                            <label for="title">标题</label>
+                            <label for="article_title">标题</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="title" name="title" value="<?php echo ($info["article_title"]); ?>" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
+                            <input type="text" class="input" id="article_title" name="article_title" value="<?php echo ($info["article_title"]); ?>" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -99,10 +99,40 @@
                     </div>
                     <div class="form-group">
                         <div class="label">
+                            <label for="thumb">缩略图</label>
+                        </div>
+                        <div class="field">
+                            <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="thumb" name="thumb" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                            <?php if(!empty($info["thumb"])): ?><img src="/Upload/article/<?php echo ($info["thumb"]); ?>" width="100" height="80"/><?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>状态</label>
+                        </div>
+                        <div class="field">
+                            <div class="button-group button-group-small radio">
+                                <label class="button <?php if($info["status"] == 1): ?>active<?php endif; ?>">
+                                    <input name="status" value="1" <?php if($info["status"] == 1): ?>checked="checked"<?php endif; ?>type="radio"><span class="icon icon-check"></span> 开启</label>
+                                <label class="button <?php if($info["status"] == 0): ?>active<?php endif; ?>">
+                                    <input name="status" value="0" <?php if($info["status"] == 0): ?>checked="checked"<?php endif; ?>type="radio"><span class="icon icon-times"></span> 关闭</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>排序</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="sort" name="sort" size="50" placeholder="<?php echo ($info["sort"]); ?>" value="<?php echo ($info["sort"]); ?>" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
                             <label for="content">内容</label>
                         </div>
                         <div class="field">
-                            <script id="editor" name="content" type="text/plain" style="width:100%;height:300px;"></script>
+                            <script id="content" name="content" type="text/plain" style="width:100%;height:300px;"></script>
                         </div>
                     </div>
                 </div>
@@ -115,7 +145,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    var ue = UE.getEditor('editor');
+    var ue = UE.getEditor('content');
     ue.addListener("ready", function () {
         ue.setContent('<?php echo ($info["content"]); ?>');
     });

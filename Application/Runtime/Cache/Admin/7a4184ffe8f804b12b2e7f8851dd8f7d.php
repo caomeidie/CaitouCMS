@@ -74,7 +74,9 @@
                 <tr>
                     <th width="45">选择</th>
                     <th width="*">标题</th>
+                    <th width="80">缩略图</th>
                     <th width="120">所属板块</th>
+                    <th width="80">排序</th>
                     <th width="120">状态</th>
                     <th width="200">添加时间</th>
                     <th width="100">操作</th>
@@ -84,9 +86,11 @@
                             <input type="checkbox" name="id[]" value="<?php echo ($vo["article_id"]); ?>" />
                         </td>
                         <td><?php echo ($vo["article_title"]); ?></td>
+                        <td><img <?php if(!empty($vo["thumb"])): ?>src="/Upload/article/<?php echo ($vo["thumb"]); ?>"<?php else: ?>src="/Public/statics/images/default.jpg"<?php endif; ?> width="40px" height="30px" /></td>
                         <td><?php echo ($vo["column_name"]); ?></td>
+                        <td><?php echo ($vo["sort"]); ?></td>
                         <td>
-                            <?php switch($vo["article_status"]): case "1": ?>正常<?php break;?>
+                            <?php switch($vo["status"]): case "1": ?>正常<?php break;?>
                                 <?php default: ?>关闭<?php endswitch;?>
                         </td>
                         <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>

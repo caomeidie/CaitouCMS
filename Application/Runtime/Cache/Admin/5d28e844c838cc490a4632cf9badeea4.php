@@ -65,7 +65,7 @@
                 <li class="active"><a href="#tab-base">添加公告</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="<?php echo U('Article/addNotice');?>" enctype="multipart/form-data" >
+        <form method="post" class="form-x" action="<?php echo U('Article/editNotice',array('id'=>$info['notice_id']));?>" >
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
@@ -74,7 +74,7 @@
                             <label for="notice_title">标题</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="notice_title" name="notice_title" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
+                            <input type="text" class="input" id="notice_title" name="notice_title" value="<?php echo ($info["notice_title"]); ?>" size="50" placeholder="请填写标题" data-validate="required:请填写标题" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -83,10 +83,10 @@
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
-                                <label class="button active">
-                                    <input name="status" value="1" checked="checked" type="radio"><span class="icon icon-check"></span> 开启</label>
-                                <label class="button">
-                                    <input name="status" value="0" type="radio"><span class="icon icon-times"></span> 关闭</label>
+                                <label class="button <?php if($info["status"] == 1): ?>active<?php endif; ?>">
+                                <input name="status" value="1" <?php if($info["status"] == 1): ?>checked="checked"<?php endif; ?>type="radio"><span class="icon icon-check"></span> 开启</label>
+                                <label class="button <?php if($info["status"] == 0): ?>active<?php endif; ?>">
+                                <input name="status" value="0" <?php if($info["status"] == 0): ?>checked="checked"<?php endif; ?>type="radio"><span class="icon icon-times"></span> 关闭</label>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                             <label>排序</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="sort" name="sort" size="50" placeholder="0" value="0" />
+                            <input type="text" class="input" id="sort" name="sort" size="50" placeholder="<?php echo ($info["sort"]); ?>" value="<?php echo ($info["sort"]); ?>" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -117,6 +117,9 @@
 </div>
 <script type="text/javascript">
     var ue = UE.getEditor('content');
+    ue.addListener("ready", function () {
+        ue.setContent('<?php echo ($info["content"]); ?>');
+    });
 </script>
 </body>
 

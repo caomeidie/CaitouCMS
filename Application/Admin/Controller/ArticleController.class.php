@@ -5,19 +5,29 @@ class ArticleController extends BackendController {
     public function index(){
         $count      = M('Article')->count();// 查询满足要求的总记录数
         $limit = $this->page($count, 2);
-        $list = M('Article')->alias('a')->field('a.*, ac.column_name')->join('__ARTICLE_COLUMN__ ac ON a.article_column = ac.column_id','LEFT')->order('a.edit_time')->limit($limit)->select();
+        $list = M('Article')->alias('a')->field('a.*, ac.column_name')->join('__ARTICLE_COLUMN__ ac ON a.article_column = ac.column_id','LEFT')->order('a.sort DESC')->limit($limit)->select();
         $this->assign('list',$list);
         $this->display();
     }
     
     public function addArticle(){
         if(IS_POST){
-            $data['article_title'] = I('post.title');
-            $data['profile'] = I('post.profile');
-            $data['content'] = I('post.content');
-            $data['article_column'] = I('post.article_column');
+            $data = I('post.');
             $data['add_time'] = time();
             $data['edit_time'] = time();
+
+            $upload = new \Think\Upload();// 实例化上传类
+            $upload->maxSize   =     3145728 ;// 设置附件上传大小
+            $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+            $upload->rootPath  =     './Upload/article/'; // 设置附件上传根目录
+            $upload->savePath  =     ''; // 设置附件上传（子）目录
+            $upload->subName   = array('date','Ymd');
+            $info   =   $upload->uploadOne($_FILES['thumb']);
+            if(!$info) {// 上传错误提示错误信息
+                $this->error($upload->getError());
+            }else{// 上传成功 获取上传文件信息
+                $data['thumb'] = $info['savepath'].$info['savename'];
+            }
 
             $article_id = M('article')->add($data);
 
@@ -36,11 +46,22 @@ class ArticleController extends BackendController {
     public function editArticle(){
         $id = I('get.id',0,'intval');
         if(IS_POST){
-            $data['article_title'] = I('post.title');
-            $data['profile'] = I('post.profile');
-            $data['content'] = I('post.content');
-            $data['article_column'] = I('post.article_column');
+            $data = I('post.');
             $data['edit_time'] = time();
+            if($_FILES['thumb']['name']){
+                $upload = new \Think\Upload();// 实例化上传类
+                $upload->maxSize   =     3145728 ;// 设置附件上传大小
+                $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+                $upload->rootPath  =     './Upload/article/'; // 设置附件上传根目录
+                $upload->savePath  =     ''; // 设置附件上传（子）目录
+                $upload->subName   = array('date','Ymd');
+                $info   =   $upload->uploadOne($_FILES['thumb']);
+                if(!$info) {// 上传错误提示错误信息
+                    $this->error($upload->getError());
+                }else{// 上传成功 获取上传文件信息
+                    $data['thumb'] = $info['savepath'].$info['savename'];
+                }
+            }
 
             if(!M('article')->where(array('article_id'=>$id))->save($data)){
                 $this->error("编辑文章失败！");
@@ -70,33 +91,6 @@ class ArticleController extends BackendController {
         }
     }
 
-    public function listNotice(){
-        $count      = M('Notice')->count();// 查询满足要求的总记录数
-        $limit = $this->page($count, 2);
-        $list = M('Notice')->order('sort DESC')->limit($limit)->select();
-        $this->assign('list',$list);
-        $this->display();
-    }
-
-    public function addNotice(){
-        if(IS_POST){
-            $data['notice_title'] = I('post.title');
-            $data['content'] = I('post.content');
-            $data['add_time'] = time();
-            $data['edit_time'] = time();
-
-            $article_id = M('article')->add($data);
-
-            if(!$article_id){
-                $this->error("添加公告失败！");
-            }else{
-                $this->success('添加公告成功！', U('index'));
-            }
-        }else{
-            $this->display();
-        }
-    }
-
     /**
      *  批量删除文章
      */
@@ -110,6 +104,80 @@ class ArticleController extends BackendController {
             $this->success('删除文章成功', U('index'));
         }else{
             $this->error('删除文章失败');
+        }
+    }
+
+    public function listNotice(){
+        $count      = M('Notice')->count();// 查询满足要求的总记录数
+        $limit = $this->page($count, 2);
+        $list = M('Notice')->order('sort DESC')->limit($limit)->select();
+        $this->assign('list',$list);
+        $this->display();
+    }
+
+    public function addNotice(){
+        if(IS_POST){
+            $data = I('post.');
+            $data['add_time'] = time();
+            $data['edit_time'] = time();
+
+            $article_id = M('Notice')->add($data);
+
+            if(!$article_id){
+                $this->error("添加公告失败！");
+            }else{
+                $this->success('添加公告成功！', U('listNotice'));
+            }
+        }else{
+            $this->display();
+        }
+    }
+
+    public function editNotice(){
+        $id = I('get.id',0,'intval');
+        if(IS_POST){
+            $data = I('post.');
+            $data['edit_time'] = time();
+
+            if(!M('Notice')->where(array('notice_id'=>$id))->save($data)){
+                $this->error("编辑公告失败！");
+            }else {
+                $this->success("编辑公告成功！", U('listNotice'));
+            }
+        }else{
+            $notice_info = M('Notice')->where(array('notice_id'=>$id))->find();
+            $notice_info['content'] = htmlspecialchars_decode($notice_info['content']);
+            $this->assign('info',$notice_info);
+            $this->display();
+        }
+    }
+
+    public function dropNotice(){
+        $id = I('get.id');
+        if(!$id){
+            $this->error('该公告不存在！');
+        }
+
+        if(M('Notice')->where(array('notice_id'=>$id))->delete()){
+            $this->success('删除公告成功', U('listNotice'));
+        }else{
+            $this->error('删除公告失败');
+        }
+    }
+
+    /**
+     *  批量删除文章
+     */
+    public function dropNoticeBatch(){
+        $id = I('post.id');
+        if(!$id){
+            $this->error('请选择公告！');
+        }
+
+        if(M('Notice')->where(array('notice_id'=>array('in', $id)))->delete()){
+            $this->success('删除公告成功', U('listNotice'));
+        }else{
+            $this->error('删除公告失败');
         }
     }
 
