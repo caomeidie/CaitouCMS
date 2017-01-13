@@ -283,7 +283,7 @@ class UserController extends BackendController {
     }
 
     public function refreshMenu(){
-        $menu_list = M('Admin_menu')->where('status=1')->order('id ASC')->index('id')->select();
+        $menu_list = M('Admin_menu')->where('status=1')->order('sort DESC')->index('id')->select();
         $dir = RUNTIME_PATH.'Cache/menu.php';
         $menu_file = fopen($dir, "w") or die("Unable to open file!");
         $text = "<?php\n\$menu_list = ".var_export($menu_list, true).";\n?>";

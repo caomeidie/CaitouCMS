@@ -1,75 +1,5 @@
 <?php
 $menu_list = array (
-  1 => 
-  array (
-    'id' => '1',
-    'pid' => '0',
-    'name' => '管理员',
-    'title' => 'User/index',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  2 => 
-  array (
-    'id' => '2',
-    'pid' => '1',
-    'name' => '管理员管理',
-    'title' => 'User/index',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  3 => 
-  array (
-    'id' => '3',
-    'pid' => '1',
-    'name' => '添加管理员',
-    'title' => 'User/addUser',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '1',
-  ),
-  4 => 
-  array (
-    'id' => '4',
-    'pid' => '1',
-    'name' => '用户组管理',
-    'title' => 'User/listGroup',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  5 => 
-  array (
-    'id' => '5',
-    'pid' => '1',
-    'name' => '添加用户组',
-    'title' => 'User/addGroup',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  6 => 
-  array (
-    'id' => '6',
-    'pid' => '1',
-    'name' => '权限管理',
-    'title' => 'User/listRule',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  7 => 
-  array (
-    'id' => '7',
-    'pid' => '1',
-    'name' => '添加权限',
-    'title' => 'User/addRule',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
   8 => 
   array (
     'id' => '8',
@@ -79,66 +9,18 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '254',
   ),
-  9 => 
+  1 => 
   array (
-    'id' => '9',
-    'pid' => '8',
-    'name' => '文章管理',
-    'title' => 'Article/index',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '1',
-  ),
-  10 => 
-  array (
-    'id' => '10',
-    'pid' => '8',
-    'name' => '添加文章',
-    'title' => 'Article/addArticle',
+    'id' => '1',
+    'pid' => '0',
+    'name' => '管理员',
+    'title' => 'User/index',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
-  ),
-  14 => 
-  array (
-    'id' => '14',
-    'pid' => '8',
-    'name' => '公告管理',
-    'title' => 'Article/listNotice',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  16 => 
-  array (
-    'id' => '16',
-    'pid' => '8',
-    'name' => '添加公告',
-    'title' => 'Article/addNotice',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  17 => 
-  array (
-    'id' => '17',
-    'pid' => '1',
-    'name' => '菜单管理',
-    'title' => 'User/listMenu',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-  ),
-  18 => 
-  array (
-    'id' => '18',
-    'pid' => '1',
-    'name' => '添加菜单',
-    'title' => 'User/addMenu',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
+    'sort' => '253',
   ),
   20 => 
   array (
@@ -149,6 +31,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   21 => 
   array (
@@ -159,6 +42,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   22 => 
   array (
@@ -169,6 +53,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   23 => 
   array (
@@ -179,6 +64,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   24 => 
   array (
@@ -189,6 +75,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   25 => 
   array (
@@ -199,6 +86,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   26 => 
   array (
@@ -209,6 +97,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '1',
+    'sort' => '0',
   ),
   27 => 
   array (
@@ -219,6 +108,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   29 => 
   array (
@@ -229,6 +119,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
   30 => 
   array (
@@ -239,6 +130,139 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
+  ),
+  18 => 
+  array (
+    'id' => '18',
+    'pid' => '1',
+    'name' => '添加菜单',
+    'title' => 'User/addMenu',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  17 => 
+  array (
+    'id' => '17',
+    'pid' => '1',
+    'name' => '菜单管理',
+    'title' => 'User/listMenu',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  2 => 
+  array (
+    'id' => '2',
+    'pid' => '1',
+    'name' => '管理员管理',
+    'title' => 'User/index',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  3 => 
+  array (
+    'id' => '3',
+    'pid' => '1',
+    'name' => '添加管理员',
+    'title' => 'User/addUser',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '1',
+    'sort' => '0',
+  ),
+  4 => 
+  array (
+    'id' => '4',
+    'pid' => '1',
+    'name' => '用户组管理',
+    'title' => 'User/listGroup',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  5 => 
+  array (
+    'id' => '5',
+    'pid' => '1',
+    'name' => '添加用户组',
+    'title' => 'User/addGroup',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  6 => 
+  array (
+    'id' => '6',
+    'pid' => '1',
+    'name' => '权限管理',
+    'title' => 'User/listRule',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  7 => 
+  array (
+    'id' => '7',
+    'pid' => '1',
+    'name' => '添加权限',
+    'title' => 'User/addRule',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  9 => 
+  array (
+    'id' => '9',
+    'pid' => '8',
+    'name' => '文章管理',
+    'title' => 'Article/index',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '1',
+    'sort' => '0',
+  ),
+  10 => 
+  array (
+    'id' => '10',
+    'pid' => '8',
+    'name' => '添加文章',
+    'title' => 'Article/addArticle',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  14 => 
+  array (
+    'id' => '14',
+    'pid' => '8',
+    'name' => '公告管理',
+    'title' => 'Article/listNotice',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  16 => 
+  array (
+    'id' => '16',
+    'pid' => '8',
+    'name' => '添加公告',
+    'title' => 'Article/addNotice',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
   ),
   31 => 
   array (
@@ -249,6 +273,7 @@ $menu_list = array (
     'status' => '1',
     'type' => '1',
     'recom' => '0',
+    'sort' => '0',
   ),
 );
 ?>

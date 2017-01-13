@@ -11,15 +11,15 @@ class BackendController extends Controller {
 		}
 		if(is_file(RUNTIME_PATH.'Cache/menu.php')){
 			require_once RUNTIME_PATH.'Cache/menu.php';
-			$this->assign('menu_list',getTree($menu_list, 'level'));
+			$this->assign('menu_list',getTree($menu_list, 'sort_level'));
 		}else{
-			$menu_list = M('Admin_menu')->where('status=1')->order('id ASC')->index('id')->select();
+			$menu_list = M('Admin_menu')->where('status=1')->order('sort DESC')->index('id')->select();
 			$dir = RUNTIME_PATH.'Cache/menu.php';
 			$menu_file = fopen($dir, "w") or die("Unable to open file!");
 			$text = "<?php\n\$menu_list = ".var_export($menu_list, true).";\n?>";
 			fwrite($menu_file, $text);
 			fclose($menu_file);
-			$this->assign('menu_list',getTree($menu_list, 'level'));
+			$this->assign('menu_list',getTree($menu_list, 'sort_level'));
 		}
 
 		$a_c = CONTROLLER_NAME.'/'.ACTION_NAME;
