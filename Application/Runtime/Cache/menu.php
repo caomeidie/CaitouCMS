@@ -1,5 +1,27 @@
 <?php
 $menu_list = array (
+  2 => 
+  array (
+    'id' => '2',
+    'pid' => '1',
+    'name' => '管理员管理',
+    'title' => 'User/index',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '255',
+  ),
+  3 => 
+  array (
+    'id' => '3',
+    'pid' => '1',
+    'name' => '添加管理员',
+    'title' => 'User/addUser',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '1',
+    'sort' => '254',
+  ),
   8 => 
   array (
     'id' => '8',
@@ -22,56 +44,45 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '253',
   ),
-  20 => 
+  4 => 
   array (
-    'id' => '20',
-    'pid' => '8',
-    'name' => '文章栏目管理',
-    'title' => 'Article/listArticleColumn',
+    'id' => '4',
+    'pid' => '1',
+    'name' => '用户组管理',
+    'title' => 'User/listGroup',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '253',
+  ),
+  5 => 
+  array (
+    'id' => '5',
+    'pid' => '1',
+    'name' => '添加用户组',
+    'title' => 'User/addGroup',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '252',
+  ),
+  27 => 
+  array (
+    'id' => '27',
+    'pid' => '4',
+    'name' => '添加成员',
+    'title' => 'User/allocateUser',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
     'sort' => '0',
   ),
-  21 => 
+  26 => 
   array (
-    'id' => '21',
-    'pid' => '8',
-    'name' => '添加文章栏目',
-    'title' => 'Article/addArticleColumn',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-    'sort' => '0',
-  ),
-  22 => 
-  array (
-    'id' => '22',
-    'pid' => '9',
-    'name' => '修改',
-    'title' => 'Article/editArticle',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-    'sort' => '0',
-  ),
-  23 => 
-  array (
-    'id' => '23',
-    'pid' => '20',
-    'name' => '修改',
-    'title' => 'Article/editArticleColumn',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-    'sort' => '0',
-  ),
-  24 => 
-  array (
-    'id' => '24',
-    'pid' => '2',
-    'name' => '修改',
-    'title' => 'User/editUser',
+    'id' => '26',
+    'pid' => '4',
+    'name' => '分配权限',
+    'title' => 'User/allocateRule',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
@@ -88,23 +99,12 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '0',
   ),
-  26 => 
+  24 => 
   array (
-    'id' => '26',
-    'pid' => '4',
-    'name' => '分配权限',
-    'title' => 'User/allocateRule',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '1',
-    'sort' => '0',
-  ),
-  27 => 
-  array (
-    'id' => '27',
-    'pid' => '4',
-    'name' => '添加成员',
-    'title' => 'User/allocateUser',
+    'id' => '24',
+    'pid' => '2',
+    'name' => '修改',
+    'title' => 'User/editUser',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
@@ -132,67 +132,67 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '0',
   ),
-  18 => 
+  31 => 
   array (
-    'id' => '18',
-    'pid' => '1',
-    'name' => '添加菜单',
-    'title' => 'User/addMenu',
+    'id' => '31',
+    'pid' => '14',
+    'name' => '修改',
+    'title' => 'Article/editNotice',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
     'sort' => '0',
   ),
-  17 => 
+  32 => 
   array (
-    'id' => '17',
-    'pid' => '1',
-    'name' => '菜单管理',
-    'title' => 'User/listMenu',
+    'id' => '32',
+    'pid' => '0',
+    'name' => '系统',
+    'title' => 'System/index',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
     'sort' => '0',
   ),
-  2 => 
+  33 => 
   array (
-    'id' => '2',
-    'pid' => '1',
-    'name' => '管理员管理',
-    'title' => 'User/index',
+    'id' => '33',
+    'pid' => '32',
+    'name' => '系统设置',
+    'title' => 'System/index',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
     'sort' => '0',
   ),
-  3 => 
+  34 => 
   array (
-    'id' => '3',
-    'pid' => '1',
-    'name' => '添加管理员',
-    'title' => 'User/addUser',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '1',
-    'sort' => '0',
-  ),
-  4 => 
-  array (
-    'id' => '4',
-    'pid' => '1',
-    'name' => '用户组管理',
-    'title' => 'User/listGroup',
+    'id' => '34',
+    'pid' => '32',
+    'name' => '友情链接',
+    'title' => 'System/listLink',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
     'sort' => '0',
   ),
-  5 => 
+  23 => 
   array (
-    'id' => '5',
-    'pid' => '1',
-    'name' => '添加用户组',
-    'title' => 'User/addGroup',
+    'id' => '23',
+    'pid' => '20',
+    'name' => '修改',
+    'title' => 'Article/editArticleColumn',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  22 => 
+  array (
+    'id' => '22',
+    'pid' => '9',
+    'name' => '修改',
+    'title' => 'Article/editArticle',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
@@ -264,12 +264,56 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '0',
   ),
-  31 => 
+  17 => 
   array (
-    'id' => '31',
-    'pid' => '14',
-    'name' => '修改',
-    'title' => 'Article/editNotice',
+    'id' => '17',
+    'pid' => '1',
+    'name' => '菜单管理',
+    'title' => 'User/listMenu',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  18 => 
+  array (
+    'id' => '18',
+    'pid' => '1',
+    'name' => '添加菜单',
+    'title' => 'User/addMenu',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  20 => 
+  array (
+    'id' => '20',
+    'pid' => '8',
+    'name' => '文章栏目管理',
+    'title' => 'Article/listArticleColumn',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  21 => 
+  array (
+    'id' => '21',
+    'pid' => '8',
+    'name' => '添加文章栏目',
+    'title' => 'Article/addArticleColumn',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  35 => 
+  array (
+    'id' => '35',
+    'pid' => '32',
+    'name' => '添加友情链接',
+    'title' => 'System/addLink',
     'status' => '1',
     'type' => '1',
     'recom' => '0',

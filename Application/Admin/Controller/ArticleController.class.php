@@ -19,7 +19,7 @@ class ArticleController extends BackendController {
             $upload = new \Think\Upload();// 实例化上传类
             $upload->maxSize   =     3145728 ;// 设置附件上传大小
             $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-            $upload->rootPath  =     './Upload/article/'; // 设置附件上传根目录
+            $upload->rootPath  =     './Upload/images/article/'; // 设置附件上传根目录
             $upload->savePath  =     ''; // 设置附件上传（子）目录
             $upload->subName   = array('date','Ymd');
             $info   =   $upload->uploadOne($_FILES['thumb']);
@@ -52,7 +52,7 @@ class ArticleController extends BackendController {
                 $upload = new \Think\Upload();// 实例化上传类
                 $upload->maxSize   =     3145728 ;// 设置附件上传大小
                 $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-                $upload->rootPath  =     './Upload/article/'; // 设置附件上传根目录
+                $upload->rootPath  =     './Upload/images/article/'; // 设置附件上传根目录
                 $upload->savePath  =     ''; // 设置附件上传（子）目录
                 $upload->subName   = array('date','Ymd');
                 $info   =   $upload->uploadOne($_FILES['thumb']);
@@ -166,7 +166,7 @@ class ArticleController extends BackendController {
     }
 
     /**
-     *  批量删除文章
+     *  批量删除公告
      */
     public function dropNoticeBatch(){
         $id = I('post.id');
@@ -191,8 +191,7 @@ class ArticleController extends BackendController {
 
     public function addArticleColumn(){
         if(IS_POST){
-            $data['column_name'] = I('post.column_name');
-            $data['sort'] = I('post.sort');
+            $data = I('post.');
             $data['add_time'] = time();
 
             $column_id = M('Article_column')->add($data);
@@ -210,8 +209,7 @@ class ArticleController extends BackendController {
     public function editArticleColumn(){
         $id = I('get.id',0,'intval');
         if(IS_POST){
-            $data['column_name'] = I('post.column_name');
-            $data['sort'] = I('post.sort');
+            $data = I('post.');
 
             if(!M('Article_column')->where(array('column_id'=>$id))->save($data)){
                 $this->error("编辑栏目失败！");
@@ -219,7 +217,7 @@ class ArticleController extends BackendController {
                 $this->error("编辑栏目成功！", U('listArticleColumn'));
             }
         }else{
-            $column_info = M('Article_column')->where(array('id'=>$id))->find();
+            $column_info = M('Article_column')->where(array('column_id'=>$id))->find();
             $this->assign('info',$column_info);
             $this->display();
         }

@@ -1,0 +1,50 @@
+<include file="Layout/header" />
+<style>
+    .list_pic{
+        width:50px;
+        height:30px;
+    }
+</style>
+<div class="admin">
+    <form method="post" action="{:U('System/index')}" id="info_form" enctype="multipart/form-data" >
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong>系统设置</strong></div>
+            <table class="table table-hover">
+                <tr>
+                    <td>{$list.domain.name}</td>
+                    <td><input type="text" class="input" id="{$list.domain.key}" name="{$list.domain.key}" size="50" value="{$list.domain.value}" /></td>
+                </tr>
+                <tr>
+                    <td>{$list.title.name}</td>
+                    <td><input type="text" class="input" id="{$list.title.key}" name="{$list.title.key}" size="50" value="{$list.title.value}" /></td>
+                </tr>
+                <tr>
+                    <td>{$list.keyword.name}</td>
+                    <td><input type="text" class="input" id="{$list.keyword.key}" name="{$list.keyword.key}" size="50" value="{$list.keyword.value}" /></td>
+                </tr>
+                <tr>
+                    <td>{$list.description.name}</td>
+                    <td><input type="text" class="input" id="{$list.description.key}" name="{$list.description.key}" size="50" value="{$list.description.value}" /></td>
+                </tr>
+                <tr>
+                    <td>{$list.logo.name}</td>
+                    <td>
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="logo" name="logo" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                        <notempty name="list.logo.value"><img src="__UPLOAD__/images/common/{$list.logo.value}" width="100px" height="80px" /></notempty>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{$list.watermark.name}</td>
+                    <td>
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="watermark" name="watermark" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                        <notempty name="list.watermark.value"><img src="__UPLOAD__/images/common/{$list.watermark.value}" width="100px" height="80px" /></notempty>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-button">
+            <button class="button bg-main" type="submit">提交</button>
+        </div>
+    </form>
+</div>
+<include file="Layout/footer" />

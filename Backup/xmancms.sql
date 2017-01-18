@@ -77,12 +77,13 @@ CREATE TABLE `xman_admin_menu` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `recom` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `sort` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_menu` */
 
-insert  into `xman_admin_menu`(`id`,`pid`,`name`,`title`,`status`,`type`,`recom`) values (1,0,'管理员','User/index',1,1,0),(2,1,'管理员管理','User/index',1,1,0),(3,1,'添加管理员','User/addUser',1,1,1),(4,1,'用户组管理','User/listGroup',1,1,0),(5,1,'添加用户组','User/addGroup',1,1,0),(6,1,'权限管理','User/listRule',1,1,0),(7,1,'添加权限','User/addRule',1,1,0),(8,0,'文章','Article/index',1,1,0),(9,8,'文章管理','Article/index',1,1,1),(10,8,'添加文章','Article/addArticle',1,1,0),(14,8,'公告管理','Article/listNotice',1,1,0),(16,8,'添加公告','Article/addNotice',1,1,0),(17,1,'菜单管理','User/listMenu',1,1,0),(18,1,'添加菜单','User/addMenu',1,1,0),(20,8,'文章栏目管理','Article/listArticleColumn',1,1,0),(21,8,'添加文章栏目','Article/addArticleColumn',1,1,0),(22,9,'修改','Article/editArticle',1,1,0),(23,20,'修改','Article/editArticleColumn',1,1,0),(24,2,'修改','User/editUser',1,1,0),(25,4,'修改','User/editGroup',1,1,0),(26,4,'分配权限','User/allocateRule',1,1,1),(27,4,'添加成员','User/allocateUser',1,1,0),(29,6,'修改','User/editRule',1,1,0),(30,17,'修改','User/editMenu',1,1,0),(31,14,'修改','Article/editNotice',1,1,0);
+insert  into `xman_admin_menu`(`id`,`pid`,`name`,`title`,`status`,`type`,`recom`,`sort`) values (1,0,'管理员','User/index',1,1,0,253),(2,1,'管理员管理','User/index',1,1,0,255),(3,1,'添加管理员','User/addUser',1,1,1,254),(4,1,'用户组管理','User/listGroup',1,1,0,253),(5,1,'添加用户组','User/addGroup',1,1,0,252),(6,1,'权限管理','User/listRule',1,1,0,0),(7,1,'添加权限','User/addRule',1,1,0,0),(8,0,'文章','Article/index',1,1,0,254),(9,8,'文章管理','Article/index',1,1,1,0),(10,8,'添加文章','Article/addArticle',1,1,0,0),(14,8,'公告管理','Article/listNotice',1,1,0,0),(16,8,'添加公告','Article/addNotice',1,1,0,0),(17,1,'菜单管理','User/listMenu',1,1,0,0),(18,1,'添加菜单','User/addMenu',1,1,0,0),(20,8,'文章栏目管理','Article/listArticleColumn',1,1,0,0),(21,8,'添加文章栏目','Article/addArticleColumn',1,1,0,0),(22,9,'修改','Article/editArticle',1,1,0,0),(23,20,'修改','Article/editArticleColumn',1,1,0,0),(24,2,'修改','User/editUser',1,1,0,0),(25,4,'修改','User/editGroup',1,1,0,0),(26,4,'分配权限','User/allocateRule',1,1,0,0),(27,4,'添加成员','User/allocateUser',1,1,0,0),(29,6,'修改','User/editRule',1,1,0,0),(30,17,'修改','User/editMenu',1,1,0,0),(31,14,'修改','Article/editNotice',1,1,0,0),(32,0,'系统','System/index',1,1,0,0),(33,32,'系统设置','System/index',1,1,0,0),(34,32,'友情链接','System/listLink',1,1,0,0),(35,32,'添加友情链接','System/addLink',1,1,0,0);
 
 /*Table structure for table `xman_admin_rule` */
 
@@ -96,11 +97,11 @@ CREATE TABLE `xman_admin_rule` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_rule` */
 
-insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(14,8,'公告管理','Article/listNotice',1,1),(16,8,'添加公告','Article/addNotice',1,1),(17,2,'修改管理员','Rule/editUser',1,1),(18,2,'删除管理员','User/dropUser',1,1),(19,4,'删除用户组','User/dropGroup',1,1),(20,4,'修改用户组','User/editGroup',1,1),(21,4,'分配权限','User/allocateRule',1,1),(22,4,'添加用户','User/allocateUser',1,1),(23,6,'修改权限','User/editRule',1,1),(24,6,'删除权限','User/dropRule',1,1),(25,1,'菜单管理','User/listMenu',1,1),(26,1,'添加菜单','addMenu',1,1),(27,25,'修改菜单','User/editMenu',1,1),(28,25,'删除菜单','Rule/dropMenu',1,1),(29,9,'修改文章','Article/editArticle',1,1),(30,9,'删除文章','Article/dropArticle',1,1),(31,14,'修改公告','Article/editNotice',1,1),(32,14,'删除公告','Article/dropNotice',1,1),(33,8,'文章栏目管理','Article/listArticleColumn',1,1),(34,8,'添加文章栏目','Article/addArticleColumn',1,1),(35,33,'修改文章栏目','Article/editArticleColumn',1,1),(36,33,'删除文章栏目','Article/dropArticleColumn',1,1);
+insert  into `xman_admin_rule`(`id`,`pid`,`name`,`title`,`status`,`type`) values (1,0,'管理员管理','User/list',1,1),(2,1,'管理员列表','User/index',1,1),(3,1,'添加管理员','User/addUser',1,1),(4,1,'用户组管理','User/listGroup',1,1),(5,1,'添加用户组','User/addGroup',1,1),(6,1,'权限管理','User/listRule',1,1),(7,1,'添加权限','User/addRule',1,1),(8,0,'文章管理','Article/list',1,1),(9,8,'文章管理','Article/index',1,1),(10,8,'添加文章','Article/addArticle',1,1),(14,8,'公告管理','Article/listNotice',1,1),(16,8,'添加公告','Article/addNotice',1,1),(17,2,'修改管理员','Rule/editUser',1,1),(18,2,'删除管理员','User/dropUser',1,1),(19,4,'删除用户组','User/dropGroup',1,1),(20,4,'修改用户组','User/editGroup',1,1),(21,4,'分配权限','User/allocateRule',1,1),(22,4,'添加用户','User/allocateUser',1,1),(23,6,'修改权限','User/editRule',1,1),(24,6,'删除权限','User/dropRule',1,1),(25,1,'菜单管理','User/listMenu',1,1),(26,1,'添加菜单','addMenu',1,1),(27,25,'修改菜单','User/editMenu',1,1),(28,25,'删除菜单','Rule/dropMenu',1,1),(29,9,'修改文章','Article/editArticle',1,1),(30,9,'删除文章','Article/dropArticle',1,1),(31,14,'修改公告','Article/editNotice',1,1),(32,14,'删除公告','Article/dropNotice',1,1),(33,8,'文章栏目管理','Article/listArticleColumn',1,1),(34,8,'添加文章栏目','Article/addArticleColumn',1,1),(35,33,'修改文章栏目','Article/editArticleColumn',1,1),(36,33,'删除文章栏目','Article/dropArticleColumn',1,1),(37,0,'系统','System/index',1,1),(38,37,'系统设置','System/index',1,1),(39,37,'友情链接','System/listLink',1,1),(40,37,'添加友情链接','System/addLink',1,1),(41,39,'修改友情链接','System/editLink',1,1),(42,39,'删除友情链接','System/dropLink',1,1);
 
 /*Table structure for table `xman_article` */
 
@@ -123,7 +124,7 @@ CREATE TABLE `xman_article` (
 
 /*Data for the table `xman_article` */
 
-insert  into `xman_article`(`article_id`,`article_title`,`profile`,`keyword`,`content`,`article_column`,`thumb`,`status`,`sort`,`add_time`,`edit_time`) values (1,'第一篇文章','第一篇文章概述2432','','&lt;p&gt;阿飞萨芬大asfsaafdsafdsa&lt;img src=&quot;/Upload/images/editor/20161220/1482225339136914.jpg&quot; title=&quot;1482225339136914.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;dsfsadfsfsadfdsfs&lt;/p&gt;',1,'20161221/585a2a88d6d20.jpg',1,0,1474447533,1482307370),(6,'sdfsafd','阿双方都是','','&lt;p&gt;撒反对撒&lt;img src=&quot;/Upload/images/editor/20161220/1482225055104085.jpg&quot; title=&quot;1482225055104085.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;&lt;/p&gt;',3,'',0,255,1482224625,1482300898),(12,'撒反对撒','三大封杀','','&lt;p&gt;啊首发萨凡sad&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Upload/images/editor/20161221/1482307454201646.jpg&quot; title=&quot;1482307454201646.jpg&quot; alt=&quot;Tulips.jpg&quot;/&gt;&lt;/p&gt;',3,'20161221/585a3783d7531.jpg',1,0,1482307459,1482307459),(9,'safsdfs','asfasfdds','','&lt;p&gt;dsafdsafsaf&lt;/p&gt;',5,'',1,0,1482300021,1482300021),(10,'dasfdsaff','sadfsf','','&lt;p&gt;safsadfsafa&lt;/p&gt;',3,'',1,0,1482300154,1482300566),(11,'asffdf','afsafsf','','',2,'',1,34,1482300915,1482300915);
+insert  into `xman_article`(`article_id`,`article_title`,`profile`,`keyword`,`content`,`article_column`,`thumb`,`status`,`sort`,`add_time`,`edit_time`) values (1,'第一篇文章','第一篇文章概述2432','','&lt;p&gt;阿飞萨芬大asfsaafdsafdsa&lt;img src=&quot;/Upload/images/editor/20161220/1482225339136914.jpg&quot; title=&quot;1482225339136914.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;dsfsadfsfsadfdsfs&lt;/p&gt;',1,'20161221/585a2a88d6d20.jpg',1,0,1474447533,1482307370),(6,'sdfsafd','阿双方都是','','&lt;p&gt;撒反对撒&lt;img src=&quot;/Upload/images/editor/20161220/1482225055104085.jpg&quot; title=&quot;1482225055104085.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;&lt;/p&gt;',1,'',0,255,1482224625,1484287086),(12,'撒反对撒','三大封杀','','&lt;p&gt;啊首发萨凡sad&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Upload/images/editor/20161221/1482307454201646.jpg&quot; title=&quot;1482307454201646.jpg&quot; alt=&quot;Tulips.jpg&quot;/&gt;&lt;/p&gt;',3,'20161221/585a3783d7531.jpg',1,0,1482307459,1482307459),(9,'safsdfs','asfasfdds','','&lt;p&gt;dsafdsafsaf&lt;/p&gt;',5,'',1,0,1482300021,1482300021),(10,'dasfdsaff','sadfsf','','&lt;p&gt;safsadfsafa&lt;/p&gt;',3,'',1,0,1482300154,1482300566),(11,'asffdf','afsafsf','','',2,'',1,34,1482300915,1482300915);
 
 /*Table structure for table `xman_article_column` */
 
@@ -132,14 +133,33 @@ DROP TABLE IF EXISTS `xman_article_column`;
 CREATE TABLE `xman_article_column` (
   `column_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `column_name` varchar(100) NOT NULL DEFAULT '',
+  `en_name` varchar(100) NOT NULL DEFAULT '',
   `sort` int(10) unsigned NOT NULL DEFAULT '0',
+  `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `add_time` int(10) unsigned NOT NULL,
   PRIMARY KEY (`column_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_article_column` */
 
-insert  into `xman_article_column`(`column_id`,`column_name`,`sort`,`add_time`) values (1,'国外新闻',2,1481957533),(2,'国内新闻',3,1481957540),(3,'ceshi',0,1482218469),(5,'sfa',0,1482218488);
+insert  into `xman_article_column`(`column_id`,`column_name`,`en_name`,`sort`,`is_show`,`add_time`) values (1,'国外新闻','foreign_news',2,0,1481957533),(2,'国内新闻','china_news',3,0,1481957540),(3,'ceshi','',0,1,1482218469),(5,'sfa','',0,1,1482218488);
+
+/*Table structure for table `xman_link` */
+
+DROP TABLE IF EXISTS `xman_link`;
+
+CREATE TABLE `xman_link` (
+  `link_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `link_name` varchar(50) NOT NULL,
+  `link_url` varchar(100) NOT NULL,
+  `link_logo` varchar(255) NOT NULL,
+  `link_recom` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `sort` int(10) unsigned NOT NULL DEFAULT '0',
+  `add_time` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`link_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `xman_link` */
 
 /*Table structure for table `xman_notice` */
 
@@ -159,7 +179,22 @@ CREATE TABLE `xman_notice` (
 
 /*Data for the table `xman_notice` */
 
-insert  into `xman_notice`(`notice_id`,`notice_title`,`content`,`thumb`,`status`,`sort`,`add_time`,`edit_time`) values (2,'公告2','&lt;p&gt;xzvxzvzcz&lt;img src=&quot;/Upload/images/editor/20161221/1482300974359401.jpeg&quot; title=&quot;1482300974359401.jpeg&quot; alt=&quot;captcha.jpeg&quot;/&gt;&lt;/p&gt;','',1,0,1482300976,1482301613),(3,'公告3','&lt;p&gt;vdsfsadfsad&lt;img src=&quot;/Upload/images/editor/20161221/1482300993618194.jpg&quot; title=&quot;1482300993618194.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;&lt;/p&gt;','',1,0,1482300994,1482301627),(4,'公告1','&lt;p&gt;safdfsf&lt;img src=&quot;/Upload/images/editor/20161221/1482301053364909.jpg&quot; title=&quot;1482301053364909.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;是大幅度释放&lt;/p&gt;','',0,255,1482301055,1482301595);
+insert  into `xman_notice`(`notice_id`,`notice_title`,`content`,`thumb`,`status`,`sort`,`add_time`,`edit_time`) values (2,'公告2','&lt;p&gt;xzvxzvzcz&lt;img src=&quot;/Upload/images/editor/20161221/1482300974359401.jpeg&quot; title=&quot;1482300974359401.jpeg&quot; alt=&quot;captcha.jpeg&quot;/&gt;&lt;/p&gt;','',1,0,1482300976,1482301613),(3,'公告3','&lt;p&gt;vdsfsadfsad&lt;img src=&quot;/Upload/images/editor/20161221/1482300993618194.jpg&quot; title=&quot;1482300993618194.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;&lt;/p&gt;','',1,0,1482300994,1482301627),(4,'公告1','&lt;p&gt;safdfsf&lt;img src=&quot;/Upload/images/editor/20161221/1482301053364909.jpg&quot; title=&quot;1482301053364909.jpg&quot; alt=&quot;1459501231580.jpg&quot;/&gt;是大幅度释放wqwrewqrweq&lt;/p&gt;','',0,25,1482301055,1484287483);
+
+/*Table structure for table `xman_system` */
+
+DROP TABLE IF EXISTS `xman_system`;
+
+CREATE TABLE `xman_system` (
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `key` varchar(50) NOT NULL DEFAULT '',
+  `value` varchar(255) NOT NULL DEFAULT '',
+  `sort` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `xman_system` */
+
+insert  into `xman_system`(`name`,`key`,`value`,`sort`) values ('域名','domain','http://www.xmancms.dev',0),('标题','title','小馒头',0),('关键词','keyword','cms系统',0),('描述','description','这是小馒头系统描述',0),('logo','logo','20170118/587f1eb93ba41.jpg',0),('水印','watermark','20170118/587f1ec28cd37.jpg',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -6,33 +6,39 @@
     }
 </style>
 <div class="admin">
-    <form method="post" action="{:U('Article/dropArticleColumnBatch')}" id="info_form">
+    <form method="post" action="{:U('System/dropLinkBatch')}" id="info_form">
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>栏目列表</strong></div>
+            <div class="panel-head"><strong>友情链接列表</strong></div>
             <div class="padding border-bottom">
                 <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
-                <a href="{:U('Article/addArticleColumn')}" class="button button-small border-green">添加栏目</a>
+                <a href="{:U('System/addLink')}" class="button button-small border-green">添加友情链接</a>
                 <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
             </div>
             <table class="table table-hover">
                 <tr>
                     <th width="45">选择</th>
-                    <th width="*">栏目名称</th>
-                    <th width="*">英文名称</th>
+                    <th width="*">网站名称</th>
+                    <th width="120">图片logo</th>
+                    <th width="120">网站链接</th>
                     <th width="120">排序</th>
+                    <th width="120">是否推荐</th>
                     <th width="200">添加时间</th>
                     <th width="100">操作</th>
                 </tr>
                 <volist name="list" id="vo">
                     <tr>
                         <td>
-                            <input type="checkbox" name="id[]" value="{$vo.column_id}" />
+                            <input type="checkbox" name="id[]" value="{$vo.link_id}" />
                         </td>
-                        <td>{$vo.column_name}</td>
-                        <td>{$vo.en_name}</td>
+                        <td>{$vo.link_name}</td>
+                        <td><notempty name="vo.link_logo"><img src="__UPLOAD__/images/link/{$vo.link_logo}" width="100px" height="80px" /></notempty></td>
+                        <td>{$vo.link_url}</td>
                         <td>{$vo.sort}</td>
+                        <td>
+                            <if condition="$vo.link_recom eq 1" >推荐<else />不推荐</if>
+                        </td>
                         <td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
-                        <td><a class="button border-blue button-little" href="{:U('Article/editArticleColumn',array('id'=>$vo['column_id']))}">修改</a> <a class="button border-yellow button-little" href="{:U('Article/dropArticleColumn',array('id'=>$vo['column_id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
+                        <td><a class="button border-blue button-little" href="{:U('System/editLink',array('id'=>$vo['link_id']))}">修改</a> <a class="button border-yellow button-little" href="{:U('System/dropLink',array('id'=>$vo['link_id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr>
                 </volist>
             </table>
@@ -46,7 +52,7 @@
     $(function(){
         $('#dropBatch').click(function(){
             if($("#info_form").find(':checkbox:checked').length <= 0){
-                swal("", "请选择用户!", "error");
+                swal("", "请选择友情链接!", "error");
                 return false;
             }else{
                 swal({
