@@ -74,6 +74,7 @@
                 <tr>
                     <th width="45">选择</th>
                     <th width="*">栏目名称</th>
+                    <th width="*">英文名称</th>
                     <th width="120">排序</th>
                     <th width="200">添加时间</th>
                     <th width="100">操作</th>
@@ -83,6 +84,7 @@
                             <input type="checkbox" name="id[]" value="<?php echo ($vo["column_id"]); ?>" />
                         </td>
                         <td><?php echo ($vo["column_name"]); ?></td>
+                        <td><?php echo ($vo["en_name"]); ?></td>
                         <td><?php echo ($vo["sort"]); ?></td>
                         <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
                         <td><a class="button border-blue button-little" href="<?php echo U('Article/editArticleColumn',array('id'=>$vo['column_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropArticleColumn',array('id'=>$vo['column_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>

@@ -62,33 +62,38 @@
     }
 </style>
 <div class="admin">
-    <form method="post" action="<?php echo U('Article/dropNoticeBatch');?>" id="info_form">
+    <form method="post" action="<?php echo U('System/dropLinkBatch');?>" id="info_form">
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>公告列表</strong></div>
+            <div class="panel-head"><strong>友情链接列表</strong></div>
             <div class="padding border-bottom">
                 <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
-                <a href="<?php echo U('Article/addNotice');?>" class="button button-small border-green">添加公告</a>
+                <a href="<?php echo U('System/addLink');?>" class="button button-small border-green">添加友情链接</a>
                 <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
             </div>
             <table class="table table-hover">
                 <tr>
                     <th width="45">选择</th>
-                    <th width="*">标题</th>
-                    <th width="120">状态</th>
+                    <th width="*">网站名称</th>
+                    <th width="120">图片logo</th>
+                    <th width="120">网站链接</th>
+                    <th width="120">排序</th>
+                    <th width="120">是否推荐</th>
                     <th width="200">添加时间</th>
                     <th width="100">操作</th>
                 </tr>
                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td>
-                            <input type="checkbox" name="id[]" value="<?php echo ($vo["notice_id"]); ?>" />
+                            <input type="checkbox" name="id[]" value="<?php echo ($vo["link_id"]); ?>" />
                         </td>
-                        <td><?php echo ($vo["notice_title"]); ?></td>
+                        <td><?php echo ($vo["link_name"]); ?></td>
+                        <td><?php if(!empty($vo["link_logo"])): ?><img src="/Upload/images/link/<?php echo ($vo["link_logo"]); ?>" width="100px" height="40px" /><?php endif; ?></td>
+                        <td><?php echo ($vo["link_url"]); ?></td>
+                        <td><?php echo ($vo["sort"]); ?></td>
                         <td>
-                            <?php switch($vo["status"]): case "1": ?>正常<?php break;?>
-                                <?php default: ?>关闭<?php endswitch;?>
+                            <?php if($vo["link_recom"] == 1): ?>推荐<?php else: ?>不推荐<?php endif; ?>
                         </td>
                         <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
-                        <td><a class="button border-blue button-little" href="<?php echo U('Article/editNotice',array('id'=>$vo['notice_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropNotice',array('id'=>$vo['notice_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
+                        <td><a class="button border-blue button-little" href="<?php echo U('System/editLink',array('id'=>$vo['link_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('System/dropLink',array('id'=>$vo['link_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </table>
             <div class="panel-foot text-center page">
@@ -101,7 +106,7 @@
     $(function(){
         $('#dropBatch').click(function(){
             if($("#info_form").find(':checkbox:checked').length <= 0){
-                swal("", "请选择用户!", "error");
+                swal("", "请选择友情链接!", "error");
                 return false;
             }else{
                 swal({

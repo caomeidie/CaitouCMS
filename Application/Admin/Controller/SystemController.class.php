@@ -74,18 +74,18 @@ class SystemController extends BackendController
             $data = I('post.');
             $data['add_time'] = time();
 
-            $upload = new \Think\Upload();// 实例化上传类
-            $upload->maxSize = 3145728;// 设置附件上传大小
-            $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-            $upload->rootPath = './Upload/images/link/'; // 设置附件上传根目录
-            $upload->savePath = ''; // 设置附件上传（子）目录
-            $upload->subName = array('date', 'Ymd');
-            if($_FILES['logo']['name']){
-                $info = $upload->uploadOne($_FILES['logo']);
+            if($_FILES['link_logo']['name'] && $data['type'] == 1){
+                $upload = new \Think\Upload();// 实例化上传类
+                $upload->maxSize = 3145728;// 设置附件上传大小
+                $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+                $upload->rootPath = './Upload/images/link/'; // 设置附件上传根目录
+                $upload->savePath = ''; // 设置附件上传（子）目录
+                $upload->subName = array('date', 'Ymd');
+                $info = $upload->uploadOne($_FILES['link_logo']);
                 if (!$info) {// 上传错误提示错误信息
                     $this->error($upload->getError());
                 } else {// 上传成功 获取上传文件信息
-                    $data['logo'] = $info['savepath'] . $info['savename'];
+                    $data['link_logo'] = $info['savepath'] . $info['savename'];
                 }
             }
 
@@ -106,33 +106,34 @@ class SystemController extends BackendController
         $id = I('get.id', 0, 'intval');
         if (IS_POST) {
             $data = I('post.');
-            $data['edit_time'] = time();
-            if ($_FILES['thumb']['name']) {
-                $upload = new \Think\Upload();// 实例化上传类
-                $upload->maxSize = 3145728;// 设置附件上传大小
-                $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-                $upload->rootPath = './Upload/article/'; // 设置附件上传根目录
-                $upload->savePath = ''; // 设置附件上传（子）目录
-                $upload->subName = array('date', 'Ymd');
-                $info = $upload->uploadOne($_FILES['thumb']);
-                if (!$info) {// 上传错误提示错误信息
-                    $this->error($upload->getError());
-                } else {// 上传成功 获取上传文件信息
-                    $data['thumb'] = $info['savepath'] . $info['savename'];
+            if($data['link_logo'] == 1){
+                if($_FILES['link_logo']['name']){
+                    $upload = new \Think\Upload();// 实例化上传类
+                    $upload->maxSize = 3145728;// 设置附件上传大小
+                    $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+                    $upload->rootPath = './Upload/images/link/'; // 设置附件上传根目录
+                    $upload->savePath = ''; // 设置附件上传（子）目录
+                    $upload->subName = array('date', 'Ymd');
+                    $info = $upload->uploadOne($_FILES['link_logo']);
+                    if (!$info) {// 上传错误提示错误信息
+                        $this->error($upload->getError());
+                    } else {// 上传成功 获取上传文件信息
+                        $data['link_logo'] = $info['savepath'] . $info['savename'];
+                    }
                 }
+            }else{
+                $data['link_logo'] = '';
             }
 
-            if (!M('article')->where(array('article_id' => $id))->save($data)) {
-                $this->error("编辑文章失败！");
+
+            if (!M('link')->where(array('link_id' => $id))->save($data)) {
+                $this->error("编辑友情链接失败！");
             } else {
-                $this->success("编辑文章成功！", U('index'));
+                $this->success("编辑友情链接成功！", U('listLink'));
             }
         } else {
-            $article_info = M('article')->where(array('article_id' => $id))->find();
-            $article_info['content'] = htmlspecialchars_decode($article_info['content']);
-            $this->assign('info', $article_info);
-            $column_list = M('Link_column')->order('sort desc')->select();
-            $this->assign('column_list', $column_list);
+            $info = M('link')->where(array('link_id' => $id))->find();
+            $this->assign('info', $info);
             $this->display();
         }
     }
@@ -141,13 +142,13 @@ class SystemController extends BackendController
     {
         $id = I('get.id');
         if (!$id) {
-            $this->error('该文章不存在！');
+            $this->error('该友情链接不存在！');
         }
 
-        if (M('Link')->where(array('article_id' => $id))->delete()) {
-            $this->success('删除文章成功', U('index'));
+        if (M('Link')->where(array('link_id' => $id))->delete()) {
+            $this->success('删除友情链接成功', U('listLink'));
         } else {
-            $this->error('删除文章失败');
+            $this->error('删除友情链接失败');
         }
     }
 
@@ -158,13 +159,13 @@ class SystemController extends BackendController
     {
         $id = I('post.id');
         if (!$id) {
-            $this->error('请选择文章！');
+            $this->error('请选择友情链接！');
         }
 
-        if (M('Link')->where(array('article_id' => array('in', $id)))->delete()) {
-            $this->success('删除文章成功', U('index'));
+        if (M('Link')->where(array('link_id' => array('in', $id)))->delete()) {
+            $this->success('删除友情链接成功', U('listLink'));
         } else {
-            $this->error('删除文章失败');
+            $this->error('删除友情链接失败');
         }
     }
 }

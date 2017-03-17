@@ -55,66 +55,77 @@
 				</div>
 			</div>
 		</div>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="admin">
     <div class="tab">
         <div class="tab-head">
             <ul class="tab-nav">
-                <li class="active"><a href="#tab-base">添加文章栏目</a></li>
+                <li class="active"><a href="#tab-base">修改菜单</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="<?php echo U('Article/addArticleColumn');?>">
+        <form method="post" class="form-x" action="<?php echo U('User/editMenu', array('id'=>$id));?>">
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
                     <div class="form-group">
                         <div class="label">
-                            <label for="column_name">栏目名称</label>
+                            <label for="name">父菜单</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="column_name" name="column_name" size="50" placeholder="请填写栏目名称" data-validate="required:请填写栏目名称" />
+                            <select name="pid">
+                                <option value="0">一级菜单</option>
+                                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo['id'] == $info['pid']): ?>selected<?php endif; ?>><?php echo ($vo['_name']); ?></option><?php endforeach; endif; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label for="en_name">英文名称</label>
+                            <label for="name">菜单名</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="en_name" name="en_name" size="50" placeholder="请填写栏目英文名称" data-validate="required:请填写栏目英文名称" />
+                            <input type="text" class="input" id="name" name="name" value="<?php echo ($info["name"]); ?>" size="50" placeholder="请填写菜单名" data-validate="required:请填写菜单名" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label>导航栏显示</label>
+                            <label for="title">权限</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="title" name="title" value="<?php echo ($info["title"]); ?>" rows="5" cols="50"  placeholder="输入控制器/方法即可 例如 Menu/index" data-validate="required:请填写菜单" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>推荐到开始菜单</label>
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
-                                <label class="button active">
-                                <input name="is_show" value="1" checked="checked" type="radio"><span class="icon icon-check"></span> 显示</label>
-                                <label class="button">
-                                <input name="is_show" value="0" type="radio"><span class="icon icon-times"></span> 不显</label>
+                                <label <?php if($info["recom"] == 1): ?>class="button active"<?php else: ?>class="button"<?php endif; ?>>
+                                    <input name="recom" value="1" <?php if($info['recom'] == 1): ?>checked="checked"<?php endif; ?> type="radio"><span class="icon icon-check"></span> 是</label>
+                                <label <?php if($info["recom"] == 0): ?>class="button active"<?php else: ?>class="button"<?php endif; ?>>
+                                    <input name="recom" value="0" <?php if($info['recom'] == 0): ?>checked="checked"<?php endif; ?> type="radio"><span class="icon icon-times"></span> 否</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label for="sort">排序</label>
+                            <label for="sort">同级排序</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="sort" name="sort" size="10" placeholder="请填写排序" />
+                            <input type="text" class="input" id="sort" name="sort" rows="5" cols="50" value="<?php echo ($info["sort"]); ?>" placeholder="0" />
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="form-button">
-                <button class="button bg-main" type="submit">添加</button>
+                <button class="button bg-main" type="submit">提交</button>
             </div>
         </form>
     </div>
 </div>
+<script type="text/javascript">
+
+</script>
 </body>
 
 </html>

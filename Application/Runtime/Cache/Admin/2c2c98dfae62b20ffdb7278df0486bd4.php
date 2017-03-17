@@ -62,63 +62,47 @@
     }
 </style>
 <div class="admin">
-    <form method="post" action="<?php echo U('Article/dropNoticeBatch');?>" id="info_form">
+    <form method="post" action="<?php echo U('System/index');?>" id="info_form" enctype="multipart/form-data" >
         <div class="panel admin-panel">
-            <div class="panel-head"><strong>公告列表</strong></div>
-            <div class="padding border-bottom">
-                <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
-                <a href="<?php echo U('Article/addNotice');?>" class="button button-small border-green">添加公告</a>
-                <a class="button button-small border-yellow" id="dropBatch">批量删除</a>
-            </div>
+            <div class="panel-head"><strong>系统设置</strong></div>
             <table class="table table-hover">
                 <tr>
-                    <th width="45">选择</th>
-                    <th width="*">标题</th>
-                    <th width="120">状态</th>
-                    <th width="200">添加时间</th>
-                    <th width="100">操作</th>
+                    <td><?php echo ($list["domain"]["name"]); ?></td>
+                    <td><input type="text" class="input" id="<?php echo ($list["domain"]["key"]); ?>" name="<?php echo ($list["domain"]["key"]); ?>" size="50" value="<?php echo ($list["domain"]["value"]); ?>" /></td>
                 </tr>
-                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                        <td>
-                            <input type="checkbox" name="id[]" value="<?php echo ($vo["notice_id"]); ?>" />
-                        </td>
-                        <td><?php echo ($vo["notice_title"]); ?></td>
-                        <td>
-                            <?php switch($vo["status"]): case "1": ?>正常<?php break;?>
-                                <?php default: ?>关闭<?php endswitch;?>
-                        </td>
-                        <td><?php echo (date("Y-m-d H:i:s",$vo["add_time"])); ?></td>
-                        <td><a class="button border-blue button-little" href="<?php echo U('Article/editNotice',array('id'=>$vo['notice_id']));?>">修改</a> <a class="button border-yellow button-little" href="<?php echo U('Article/dropNotice',array('id'=>$vo['notice_id']));?>" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a></td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <tr>
+                    <td><?php echo ($list["title"]["name"]); ?></td>
+                    <td><input type="text" class="input" id="<?php echo ($list["title"]["key"]); ?>" name="<?php echo ($list["title"]["key"]); ?>" size="50" value="<?php echo ($list["title"]["value"]); ?>" /></td>
+                </tr>
+                <tr>
+                    <td><?php echo ($list["keyword"]["name"]); ?></td>
+                    <td><input type="text" class="input" id="<?php echo ($list["keyword"]["key"]); ?>" name="<?php echo ($list["keyword"]["key"]); ?>" size="50" value="<?php echo ($list["keyword"]["value"]); ?>" /></td>
+                </tr>
+                <tr>
+                    <td><?php echo ($list["description"]["name"]); ?></td>
+                    <td><input type="text" class="input" id="<?php echo ($list["description"]["key"]); ?>" name="<?php echo ($list["description"]["key"]); ?>" size="50" value="<?php echo ($list["description"]["value"]); ?>" /></td>
+                </tr>
+                <tr>
+                    <td><?php echo ($list["logo"]["name"]); ?></td>
+                    <td>
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="logo" name="logo" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                        <?php if(!empty($list["logo"]["value"])): ?><img src="/Upload/images/common/<?php echo ($list["logo"]["value"]); ?>" width="100px" height="80px" /><?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td><?php echo ($list["watermark"]["name"]); ?></td>
+                    <td>
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="watermark" name="watermark" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                        <?php if(!empty($list["watermark"]["value"])): ?><img src="/Upload/images/common/<?php echo ($list["watermark"]["value"]); ?>" width="100px" height="80px" /><?php endif; ?>
+                    </td>
+                </tr>
             </table>
-            <div class="panel-foot text-center page">
-                <?php echo ($page); ?>
-            </div>
+        </div>
+        <div class="form-button">
+            <button class="button bg-main" type="submit">提交</button>
         </div>
     </form>
 </div>
-<script>
-    $(function(){
-        $('#dropBatch').click(function(){
-            if($("#info_form").find(':checkbox:checked').length <= 0){
-                swal("", "请选择用户!", "error");
-                return false;
-            }else{
-                swal({
-                    title: "",
-                    text: "您确定要删除吗？",
-                    type: "warning",
-                    showCancelButton: true,
-                    closeOnConfirm: true,
-                    confirmButtonText: "确定",
-                    confirmButtonColor: "#ec6c62"
-                }, function() {
-                    $("#info_form").submit();
-                });
-            }
-        });
-    })
-</script>
 </body>
 
 </html>

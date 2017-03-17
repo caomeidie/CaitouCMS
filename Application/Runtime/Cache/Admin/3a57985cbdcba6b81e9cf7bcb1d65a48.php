@@ -73,15 +73,17 @@
                 <tr>
                     <th>菜单名</th>
                     <th>权限</th>
+                    <th>排序</th>
                     <th>是否推荐</th>
                     <th>操作</th>
                 </tr>
                 <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
                         <td><?php echo ($vo['_name']); ?></td>
                         <td><?php echo ($vo['title']); ?></td>
+                        <td><?php echo ($vo['sort']); ?></td>
                         <td><?php if($vo['recom'] == 1): ?>是<?php else: ?>否<?php endif; ?></td>
                         <td>
-                            <?php if($vo["_level"] <= 2): ?><a class="button border-green button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
+                            <?php if($vo["_level"] <= 2): ?><a class="button border-blue button-little" href="<?php echo U('User/addMenu',array('pid'=>$vo['id']));?>">添加子菜单</a><?php endif; ?>
                             <?php if($vo["title"] != 'User/listMenu' AND $vo["title"] != 'User/addMenu' AND $vo["title"] != 'User/addRule' AND $vo["title"] != 'User/listRule'): ?><a class="button border-blue button-little" href="<?php echo U('User/editMenu',array('id'=>$vo['id']));?>">修改</a>
                             <a class="button border-yellow button-little" href="javascript:if(confirm('确定删除？'))location='<?php echo U('User/dropMenu',array('id'=>$vo['id']));?>'">删除</a><?php endif; ?>
                         </td>

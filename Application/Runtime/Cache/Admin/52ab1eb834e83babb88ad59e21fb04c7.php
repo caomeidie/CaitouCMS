@@ -106,6 +106,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="sort">同级排序</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input" id="sort" name="sort" rows="5" cols="50" value="0" placeholder="0" />
+                        </div>
+                    </div>
                 </div>
             </div>
 

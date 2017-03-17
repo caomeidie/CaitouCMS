@@ -66,6 +66,17 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '252',
   ),
+  29 => 
+  array (
+    'id' => '29',
+    'pid' => '6',
+    'name' => '修改',
+    'title' => 'User/editRule',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
   27 => 
   array (
     'id' => '27',
@@ -94,28 +105,6 @@ $menu_list = array (
     'pid' => '4',
     'name' => '修改',
     'title' => 'User/editGroup',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-    'sort' => '0',
-  ),
-  24 => 
-  array (
-    'id' => '24',
-    'pid' => '2',
-    'name' => '修改',
-    'title' => 'User/editUser',
-    'status' => '1',
-    'type' => '1',
-    'recom' => '0',
-    'sort' => '0',
-  ),
-  29 => 
-  array (
-    'id' => '29',
-    'pid' => '6',
-    'name' => '修改',
-    'title' => 'User/editRule',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
@@ -171,6 +160,28 @@ $menu_list = array (
     'pid' => '32',
     'name' => '友情链接',
     'title' => 'System/listLink',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  35 => 
+  array (
+    'id' => '35',
+    'pid' => '32',
+    'name' => '添加友情链接',
+    'title' => 'System/addLink',
+    'status' => '1',
+    'type' => '1',
+    'recom' => '0',
+    'sort' => '0',
+  ),
+  24 => 
+  array (
+    'id' => '24',
+    'pid' => '2',
+    'name' => '修改',
+    'title' => 'User/editUser',
     'status' => '1',
     'type' => '1',
     'recom' => '0',
@@ -308,12 +319,12 @@ $menu_list = array (
     'recom' => '0',
     'sort' => '0',
   ),
-  35 => 
+  36 => 
   array (
-    'id' => '35',
-    'pid' => '32',
-    'name' => '添加友情链接',
-    'title' => 'System/addLink',
+    'id' => '36',
+    'pid' => '34',
+    'name' => '修改',
+    'title' => 'System/editLink',
     'status' => '1',
     'type' => '1',
     'recom' => '0',

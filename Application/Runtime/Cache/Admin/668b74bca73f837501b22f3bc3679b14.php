@@ -55,66 +55,94 @@
 				</div>
 			</div>
 		</div>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="admin">
     <div class="tab">
         <div class="tab-head">
             <ul class="tab-nav">
-                <li class="active"><a href="#tab-base">添加文章栏目</a></li>
+                <li class="active"><a href="#tab-base">添加友情链接</a></li>
             </ul>
         </div>
-        <form method="post" class="form-x" action="<?php echo U('Article/addArticleColumn');?>">
+        <form method="post" class="form-x" action="<?php echo U('System/addLink');?>" enctype="multipart/form-data" >
             <div class="tab-body">
                 <br />
                 <div class="tab-panel active" id="tab-base">
                     <div class="form-group">
                         <div class="label">
-                            <label for="column_name">栏目名称</label>
+                            <label for="link_name">网站名称</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="column_name" name="column_name" size="50" placeholder="请填写栏目名称" data-validate="required:请填写栏目名称" />
+                            <input type="text" class="input" id="link_name" name="link_name" size="50" placeholder="请填写网站名称" data-validate="required:请填写网站名称" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label for="en_name">英文名称</label>
+                            <label for="link_url">网站链接</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="en_name" name="en_name" size="50" placeholder="请填写栏目英文名称" data-validate="required:请填写栏目英文名称" />
+                            <input type="text" class="input" id="link_url" name="link_url" size="50" placeholder="请填写网站链接" data-validate="required:请填写网站链接" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label>导航栏显示</label>
+                            <label>链接类型</label>
+                        </div>
+                        <div class="field">
+                            <div class="button-group button-group-small radio type">
+                                <label class="button active">
+                                    <input name="type" value="1" checked="checked" type="radio"><span class="icon icon-check"></span>图片</label>
+                                <label class="button">
+                                    <input name="type" value="0" type="radio"><span class="icon icon-check"></span>文字</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group link_logo">
+                        <div class="label">
+                            <label for="link_logo">网站logo</label>
+                        </div>
+                        <div class="field">
+                            <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file" id="link_logo" name="link_logo" data-validate="regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件" /></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>推荐</label>
                         </div>
                         <div class="field">
                             <div class="button-group button-group-small radio">
                                 <label class="button active">
-                                <input name="is_show" value="1" checked="checked" type="radio"><span class="icon icon-check"></span> 显示</label>
+                                    <input name="link_recom" value="1" checked="checked" type="radio"><span class="icon icon-check"></span>是</label>
                                 <label class="button">
-                                <input name="is_show" value="0" type="radio"><span class="icon icon-times"></span> 不显</label>
+                                    <input name="link_recom" value="0" type="radio"><span class="icon icon-times"></span>否</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="label">
-                            <label for="sort">排序</label>
+                            <label>排序</label>
                         </div>
                         <div class="field">
-                            <input type="text" class="input" id="sort" name="sort" size="10" placeholder="请填写排序" />
+                            <input type="text" class="input" id="sort" name="sort" size="50" placeholder="0" value="0" />
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="form-button">
-                <button class="button bg-main" type="submit">添加</button>
+                <button class="button bg-main" type="submit">提交</button>
             </div>
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $('.type :radio').click(function(){
+            if($('.type :checked').val() == 1){
+                $('.link_logo').show();
+            }else{
+                $('.link_logo').hide();            }
+        });
+
+    });
+</script>
 </body>
 
 </html>

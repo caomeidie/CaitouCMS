@@ -79,11 +79,11 @@ CREATE TABLE `xman_admin_menu` (
   `recom` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `sort` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_admin_menu` */
 
-insert  into `xman_admin_menu`(`id`,`pid`,`name`,`title`,`status`,`type`,`recom`,`sort`) values (1,0,'管理员','User/index',1,1,0,253),(2,1,'管理员管理','User/index',1,1,0,255),(3,1,'添加管理员','User/addUser',1,1,1,254),(4,1,'用户组管理','User/listGroup',1,1,0,253),(5,1,'添加用户组','User/addGroup',1,1,0,252),(6,1,'权限管理','User/listRule',1,1,0,0),(7,1,'添加权限','User/addRule',1,1,0,0),(8,0,'文章','Article/index',1,1,0,254),(9,8,'文章管理','Article/index',1,1,1,0),(10,8,'添加文章','Article/addArticle',1,1,0,0),(14,8,'公告管理','Article/listNotice',1,1,0,0),(16,8,'添加公告','Article/addNotice',1,1,0,0),(17,1,'菜单管理','User/listMenu',1,1,0,0),(18,1,'添加菜单','User/addMenu',1,1,0,0),(20,8,'文章栏目管理','Article/listArticleColumn',1,1,0,0),(21,8,'添加文章栏目','Article/addArticleColumn',1,1,0,0),(22,9,'修改','Article/editArticle',1,1,0,0),(23,20,'修改','Article/editArticleColumn',1,1,0,0),(24,2,'修改','User/editUser',1,1,0,0),(25,4,'修改','User/editGroup',1,1,0,0),(26,4,'分配权限','User/allocateRule',1,1,0,0),(27,4,'添加成员','User/allocateUser',1,1,0,0),(29,6,'修改','User/editRule',1,1,0,0),(30,17,'修改','User/editMenu',1,1,0,0),(31,14,'修改','Article/editNotice',1,1,0,0),(32,0,'系统','System/index',1,1,0,0),(33,32,'系统设置','System/index',1,1,0,0),(34,32,'友情链接','System/listLink',1,1,0,0),(35,32,'添加友情链接','System/addLink',1,1,0,0);
+insert  into `xman_admin_menu`(`id`,`pid`,`name`,`title`,`status`,`type`,`recom`,`sort`) values (1,0,'管理员','User/index',1,1,0,253),(2,1,'管理员管理','User/index',1,1,0,255),(3,1,'添加管理员','User/addUser',1,1,1,254),(4,1,'用户组管理','User/listGroup',1,1,0,253),(5,1,'添加用户组','User/addGroup',1,1,0,252),(6,1,'权限管理','User/listRule',1,1,0,0),(7,1,'添加权限','User/addRule',1,1,0,0),(8,0,'文章','Article/index',1,1,0,254),(9,8,'文章管理','Article/index',1,1,1,0),(10,8,'添加文章','Article/addArticle',1,1,0,0),(14,8,'公告管理','Article/listNotice',1,1,0,0),(16,8,'添加公告','Article/addNotice',1,1,0,0),(17,1,'菜单管理','User/listMenu',1,1,0,0),(18,1,'添加菜单','User/addMenu',1,1,0,0),(20,8,'文章栏目管理','Article/listArticleColumn',1,1,0,0),(21,8,'添加文章栏目','Article/addArticleColumn',1,1,0,0),(22,9,'修改','Article/editArticle',1,1,0,0),(23,20,'修改','Article/editArticleColumn',1,1,0,0),(24,2,'修改','User/editUser',1,1,0,0),(25,4,'修改','User/editGroup',1,1,0,0),(26,4,'分配权限','User/allocateRule',1,1,0,0),(27,4,'添加成员','User/allocateUser',1,1,0,0),(29,6,'修改','User/editRule',1,1,0,0),(30,17,'修改','User/editMenu',1,1,0,0),(31,14,'修改','Article/editNotice',1,1,0,0),(32,0,'系统','System/index',1,1,0,0),(33,32,'系统设置','System/index',1,1,0,0),(34,32,'友情链接','System/listLink',1,1,0,0),(35,32,'添加友情链接','System/addLink',1,1,0,0),(36,34,'修改','System/editLink',1,1,0,0);
 
 /*Table structure for table `xman_admin_rule` */
 
@@ -154,12 +154,15 @@ CREATE TABLE `xman_link` (
   `link_url` varchar(100) NOT NULL,
   `link_logo` varchar(255) NOT NULL,
   `link_recom` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '链接类型：0无logo,1有logo',
   `sort` int(10) unsigned NOT NULL DEFAULT '0',
   `add_time` int(10) unsigned NOT NULL,
   PRIMARY KEY (`link_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xman_link` */
+
+insert  into `xman_link`(`link_id`,`link_name`,`link_url`,`link_logo`,`link_recom`,`type`,`sort`,`add_time`) values (1,'百度','http://www.baidu.com','',1,1,0,1484790532),(2,'新浪','http://www.sina.com.cn','',0,1,0,1484790553),(3,'腾讯','http://www.qq.com','20170119/5880217d105cf.png',0,1,255,1484790582);
 
 /*Table structure for table `xman_notice` */
 
